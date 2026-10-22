@@ -1,0 +1,4366 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison Hermance — Elegancia y Fragancias</title>
+  <meta name="description" content="Boutique de perfumes y bolsos seleccionados con cuidado. Elegancia y Fragancias para toda Europa." />
+  <meta property="og:title" content="Maison Hermance — Elegancia y Fragancias" />
+  <meta property="og:description" content="Boutique de perfumes y bolsos seleccionados con cuidado. Elegancia y Fragancias para toda Europa." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ========================================================
+       VARIABLES CSS & BASE
+       ======================================================== */
+    :root {
+      --bg-primary: #FFFFFF;
+      --bg-sage: #E3EEE7;
+      --text-dark: #111111;
+      --text-muted: #4A4A4A;
+      --gold: #B8924A;
+      --gold-light: #DFC07A;
+      
+      /* Pastels capsules produit */
+      --pastel-rose: #F6CFC9;
+      --pastel-sand: #F3E4B8;
+      --pastel-lilac: #E4D3F2;
+      --pastel-mint: #CFE6D9;
+
+      --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --ease-lux: cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-primary);
+      color: var(--text-dark);
+      line-height: 1.5;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--text-dark);
+      outline-offset: 3px;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 40px;
+      }
+    }
+
+    /* ========================================================
+       BOUTONS & PILULES SIGNATURE
+       ======================================================== */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 28px;
+      border-radius: 9999px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      transition: transform 0.25s var(--ease-lux), background-color 0.25s var(--ease-lux), color 0.25s var(--ease-lux), box-shadow 0.25s var(--ease-lux);
+      user-select: none;
+    }
+
+    .btn-primary {
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(17, 17, 17, 0.12);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(17, 17, 17, 0.2);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-dark);
+      border: 1px solid var(--text-dark);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary:active {
+      transform: translateY(1px);
+    }
+
+    .btn-white {
+      background-color: #FFFFFF;
+      color: var(--text-dark);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+    }
+
+    .btn-sm {
+      padding: 9px 18px;
+      font-size: 0.8125rem;
+    }
+
+    /* ========================================================
+       EN-TÊTE FIXE
+       ======================================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 76px;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      border-bottom-color: rgba(17, 17, 17, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    /* Logo */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-dark);
+      white-space: nowrap;
+    }
+
+    /* Navigation centrée */
+    .nav-desktop {
+      display: none;
+    }
+
+    @media (min-width: 880px) {
+      .nav-desktop {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        font-size: 0.9375rem;
+        font-weight: 500;
+      }
+    }
+
+    .nav-link {
+      position: relative;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+      padding: 6px 0;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text-dark);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--text-dark);
+      border-radius: 2px;
+    }
+
+    .nav-separator {
+      color: rgba(17, 17, 17, 0.25);
+      user-select: none;
+    }
+
+    /* Actions droites */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Sélecteur de langue */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .lang-btn {
+      padding: 4px 6px;
+      color: #888888;
+      transition: color 0.2s ease;
+    }
+
+    .lang-btn:hover {
+      color: var(--text-dark);
+    }
+
+    .lang-btn.active {
+      color: var(--text-dark);
+      font-weight: 800;
+    }
+
+    .lang-pipe {
+      color: #CCCCCC;
+      user-select: none;
+    }
+
+    /* Bouton Panier */
+    .cart-btn {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F7F7F7;
+      transition: background-color 0.2s ease, transform 0.2s var(--ease-lux);
+    }
+
+    .cart-btn:hover {
+      background: #EFEFEF;
+      transform: scale(1.05);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+      transition: transform 0.2s var(--ease-lux);
+    }
+
+    .cart-count.bump {
+      transform: scale(1.35);
+    }
+
+    /* Burger Mobile */
+    .menu-toggle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F7F7F7;
+    }
+
+    @media (min-width: 880px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    /* Mobile Overlay Menu */
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(17, 17, 17, 0.4);
+      z-index: 150;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .mobile-menu-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 360px;
+      background-color: #FFFFFF;
+      z-index: 160;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      transform: translateX(100%);
+      transition: transform 0.35s var(--ease-lux);
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .mobile-nav-links a {
+      color: var(--text-dark);
+      transition: opacity 0.2s;
+    }
+
+    .mobile-nav-links a:hover {
+      opacity: 0.6;
+    }
+
+    .mobile-menu-footer {
+      margin-top: auto;
+      padding-top: 32px;
+      border-top: 1px solid #ECECEC;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* ========================================================
+       HERO SECTION
+       ======================================================== */
+    .hero-section {
+      padding-top: 116px;
+      padding-bottom: 72px;
+      background-color: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 992px) {
+      .hero-section {
+        padding-top: 136px;
+        padding-bottom: 100px;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1.05fr 1fr;
+        gap: 64px;
+      }
+    }
+
+    /* Hero Left */
+    .hero-content {
+      max-width: 580px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.75rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+      color: var(--text-dark);
+      margin-bottom: 24px;
+      text-wrap: balance;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 36px;
+      font-size: 0.8125rem;
+      color: #666666;
+    }
+
+    .trust-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--gold);
+    }
+
+    /* Hero Right Visual Showcase */
+    .hero-visual-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 992px) {
+      .hero-visual-wrapper {
+        min-height: 520px;
+        max-width: 100%;
+      }
+    }
+
+    /* Main Hero Image Container */
+    .hero-main-image-box {
+      position: relative;
+      width: 320px;
+      height: 420px;
+      border-radius: 200px 200px 40px 40px;
+      background: linear-gradient(180deg, #F9F9F9 0%, #F1F4F2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+      transition: transform 0.4s var(--ease-lux);
+    }
+
+    @media (min-width: 768px) {
+      .hero-main-image-box {
+        width: 380px;
+        height: 480px;
+      }
+    }
+
+    .hero-main-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-lux);
+    }
+
+    .hero-visual-wrapper:hover .hero-main-image-box img {
+      transform: scale(1.04);
+    }
+
+    /* Floating Price Tag */
+    .hero-price-tag-wrap {
+      position: absolute;
+      top: 18%;
+      right: 2%;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      pointer-events: none;
+      animation: floatSubtle 4s ease-in-out infinite alternate;
+    }
+
+    .price-tag-line {
+      width: 48px;
+      height: 1px;
+      background-color: var(--text-dark);
+      position: relative;
+    }
+
+    .price-tag-line::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -3px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--text-dark);
+    }
+
+    .price-tag-pill {
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+      white-space: nowrap;
+      margin-left: 2px;
+    }
+
+    /* Overlapping Circles Bottom-Right */
+    .hero-overlapping-circles {
+      position: absolute;
+      bottom: -15px;
+      right: 0;
+      display: flex;
+      align-items: center;
+      z-index: 12;
+    }
+
+    .overlap-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #FFFFFF;
+      background-color: #FAFAFA;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .overlap-circle {
+        width: 110px;
+        height: 110px;
+      }
+    }
+
+    .overlap-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlap-circle-2 {
+      margin-left: -32px;
+    }
+
+    .overlap-badge-novedad {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      z-index: 15;
+      letter-spacing: 0.02em;
+    }
+
+    /* Floating SVG Decorative Botanical Elements */
+    .floating-botanicals {
+      position: absolute;
+      inset: -30px;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .float-item {
+      position: absolute;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.06));
+    }
+
+    .petal-1 {
+      top: 12%;
+      left: 4%;
+      width: 44px;
+      height: 44px;
+      animation: floatPetal1 6s ease-in-out infinite alternate;
+    }
+
+    .citrus-1 {
+      top: 6%;
+      right: 22%;
+      width: 52px;
+      height: 52px;
+      animation: floatCitrus 7s ease-in-out infinite alternate;
+    }
+
+    .vanilla-1 {
+      bottom: 22%;
+      left: 0;
+      width: 56px;
+      height: 56px;
+      animation: floatVanilla 8s ease-in-out infinite alternate;
+    }
+
+    .petal-2 {
+      bottom: 12%;
+      right: 28%;
+      width: 36px;
+      height: 36px;
+      animation: floatPetal2 5.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatPetal1 {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(8px, -18px) rotate(14deg); }
+    }
+
+    @keyframes floatCitrus {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(-10px, 14px) rotate(-18deg); }
+    }
+
+    @keyframes floatVanilla {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(12px, -12px) rotate(22deg); }
+    }
+
+    @keyframes floatPetal2 {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(-8px, -14px) rotate(-12deg); }
+    }
+
+    @keyframes floatSubtle {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+
+    /* ========================================================
+       SECTION 3: DOS UNIVERSOS
+       ======================================================== */
+    .universes-section {
+      background-color: var(--bg-sage);
+      padding: 96px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-title {
+      font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-dark);
+      line-height: 1.1;
+    }
+
+    .section-kicker {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .universes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .universes-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    .universe-capsule {
+      position: relative;
+      border-radius: 9999px;
+      overflow: hidden;
+      min-height: 480px;
+      padding: 56px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.4s var(--ease-lux), box-shadow 0.4s var(--ease-lux);
+    }
+
+    .universe-capsule:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+    }
+
+    .universe-perfumes {
+      background-color: var(--pastel-lilac);
+    }
+
+    .universe-bolsos {
+      background-color: var(--pastel-sand);
+    }
+
+    .universe-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-dark);
+      z-index: 2;
+    }
+
+    .universe-img-wrap {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 20px 0;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      background-color: #FFFFFF;
+      transition: transform 0.5s var(--ease-lux);
+    }
+
+    .universe-capsule:hover .universe-img-wrap {
+      transform: scale(1.08);
+    }
+
+    .universe-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ========================================================
+       SECTION 4: QUIZ (5 PREGUNTAS)
+       ======================================================== */
+    .quiz-section {
+      background-color: var(--bg-primary);
+      padding: 96px 0;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .quiz-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 64px;
+      }
+    }
+
+    .quiz-card {
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+      border-radius: 36px;
+      padding: 36px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .quiz-card {
+        padding: 48px;
+      }
+    }
+
+    .quiz-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .quiz-step-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #A0A0A0;
+      letter-spacing: 0.04em;
+    }
+
+    .quiz-progress-track {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+      width: 20%;
+      transition: width 0.35s var(--ease-lux);
+    }
+
+    .quiz-question-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .quiz-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .quiz-opt-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      text-align: left;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease-lux);
+    }
+
+    .quiz-opt-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--gold);
+      transform: translateX(4px);
+    }
+
+    .quiz-opt-btn.selected {
+      background: #FFFFFF;
+      color: var(--text-dark);
+      font-weight: 700;
+      border-color: #FFFFFF;
+    }
+
+    .quiz-opt-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .quiz-opt-btn.selected .quiz-opt-circle {
+      border-color: var(--text-dark);
+      background-color: var(--text-dark);
+    }
+
+    .quiz-opt-btn.selected .quiz-opt-circle::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #FFFFFF;
+    }
+
+    .quiz-footer-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .quiz-back-btn {
+      color: #AAAAAA;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .quiz-back-btn:hover {
+      color: #FFFFFF;
+    }
+
+    /* Results view inside Quiz Card */
+    .quiz-results-container {
+      display: none;
+    }
+
+    .quiz-results-container.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .quiz-results-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .quiz-results-subtitle {
+      font-size: 0.875rem;
+      color: #BBBBBB;
+      margin-bottom: 24px;
+    }
+
+    .quiz-recom-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .quiz-recom-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 12px 16px;
+      border-radius: 16px;
+    }
+
+    .quiz-recom-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: #333333;
+    }
+
+    .quiz-recom-info {
+      flex: 1;
+    }
+
+    .quiz-recom-name {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .quiz-recom-price {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .quiz-email-box {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .quiz-email-form {
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+    }
+
+    @media (min-width: 500px) {
+      .quiz-email-form {
+        flex-direction: row;
+      }
+    }
+
+    .quiz-email-input {
+      flex: 1;
+      padding: 12px 18px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      font-size: 0.875rem;
+    }
+
+    .quiz-email-input::placeholder {
+      color: #888888;
+    }
+
+    .quiz-success-msg {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: rgba(184, 146, 74, 0.2);
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      font-size: 0.8125rem;
+      color: #FFFFFF;
+      display: none;
+    }
+
+    /* ========================================================
+       SECTION 5: NUESTRA SELECCIÓN (SHOWCASE)
+       ======================================================== */
+    .catalog-section {
+      padding: 96px 0;
+      background-color: var(--bg-primary);
+    }
+
+    /* Filter Tabs */
+    .filter-tabs-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 56px;
+    }
+
+    .filter-tabs-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 32px;
+      border-bottom: 2px solid #EFEFEF;
+      padding-bottom: 4px;
+    }
+
+    .filter-tab {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: #888888;
+      padding: 8px 4px;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .filter-tab.active {
+      color: var(--text-dark);
+    }
+
+    .filter-slider {
+      position: absolute;
+      bottom: -2px;
+      height: 2px;
+      background-color: var(--text-dark);
+      transition: left 0.3s var(--ease-lux), width 0.3s var(--ease-lux);
+    }
+
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    @media (min-width: 600px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 36px;
+      }
+    }
+
+    /* Product Card with Pastel Vertical Capsule */
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.3s var(--ease-lux);
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .capsule-box {
+      width: 100%;
+      height: 380px;
+      border-radius: 9999px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .product-card:hover .capsule-box {
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07);
+    }
+
+    .capsule-box.capsule-lilas { background-color: var(--pastel-lilac); }
+    .capsule-box.capsule-sable { background-color: var(--pastel-sand); }
+    .capsule-box.capsule-menthe { background-color: var(--pastel-mint); }
+    .capsule-box.capsule-rose { background-color: var(--pastel-rose); }
+
+    .capsule-img {
+      width: 78%;
+      height: 78%;
+      object-fit: cover;
+      border-radius: 9999px;
+      transition: transform 0.4s var(--ease-lux);
+    }
+
+    .product-card:hover .capsule-img {
+      transform: scale(1.06);
+    }
+
+    /* Badges */
+    .product-badge-wrap {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    .card-badge {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-black {
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+    }
+
+    .badge-discount {
+      background-color: #B83A3A;
+      color: #FFFFFF;
+    }
+
+    /* Quick Add button on hover */
+    .quick-add-overlay-btn {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translate(-50%, 15px);
+      opacity: 0;
+      transition: transform 0.25s var(--ease-lux), opacity 0.25s ease;
+      z-index: 8;
+    }
+
+    .product-card:hover .quick-add-overlay-btn,
+    .product-card:focus-within .quick-add-overlay-btn {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+
+    /* Product Details */
+    .product-details {
+      padding: 0 8px;
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      font-size: 0.8125rem;
+      color: #666666;
+    }
+
+    .stars-group {
+      display: inline-flex;
+      gap: 2px;
+      color: var(--gold);
+    }
+
+    .product-name {
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .price-current {
+      font-size: 1.1875rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .price-old {
+      font-size: 0.9375rem;
+      text-decoration: line-through;
+      color: #999999;
+    }
+
+    .product-mobile-add-btn {
+      margin-top: 12px;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      .product-mobile-add-btn {
+        display: none;
+      }
+    }
+
+    /* ========================================================
+       SECTION 6: OPINIONES DE NUESTROS CLIENTES
+       ======================================================== */
+    .reviews-section {
+      background-color: var(--bg-sage);
+      padding: 96px 0;
+      overflow: hidden;
+    }
+
+    .reviews-carousel-wrapper {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .reviews-track-container {
+      overflow: hidden;
+      border-radius: 28px;
+    }
+
+    .reviews-track {
+      display: flex;
+      transition: transform 0.4s var(--ease-lux);
+      will-change: transform;
+    }
+
+    .review-slide {
+      min-width: 100%;
+      padding: 8px;
+    }
+
+    .review-card {
+      background-color: #FFFFFF;
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 260px;
+    }
+
+    @media (min-width: 768px) {
+      .review-card {
+        padding: 48px;
+      }
+    }
+
+    .review-quote {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin: 20px 0;
+    }
+
+    .review-author-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .review-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: #EFEFEF;
+    }
+
+    .review-author-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .review-author-city {
+      font-size: 0.8125rem;
+      color: #777777;
+    }
+
+    /* Carousel Nav Arrows & Dots */
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .carousel-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .carousel-arrow:hover {
+      transform: scale(1.08);
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+    }
+
+    .carousel-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background-color: rgba(17, 17, 17, 0.2);
+      transition: width 0.3s ease, background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      width: 24px;
+      background-color: var(--text-dark);
+    }
+
+    /* ========================================================
+       SECTION 7: GUÍAS PARA ELEGIR BIEN
+       ======================================================== */
+    .guides-section {
+      background-color: var(--bg-primary);
+      padding: 96px 0;
+    }
+
+    .guides-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .guides-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .guide-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .guide-capsule {
+      width: 100%;
+      height: 320px;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      position: relative;
+      background-color: var(--pastel-rose);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s var(--ease-lux);
+    }
+
+    .guide-card:hover .guide-capsule {
+      transform: translateY(-4px);
+    }
+
+    .guide-capsule img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s var(--ease-lux);
+    }
+
+    .guide-card:hover .guide-capsule img {
+      transform: scale(1.05);
+    }
+
+    .guide-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      letter-spacing: -0.015em;
+    }
+
+    /* ========================================================
+       SECTION 8: SÍGUENOS EN TIKTOK
+       ======================================================== */
+    .tiktok-section {
+      background-color: var(--bg-sage);
+      padding: 96px 0;
+    }
+
+    .tiktok-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 900px) {
+      .tiktok-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+    }
+
+    .tiktok-card {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s var(--ease-lux), box-shadow 0.3s ease;
+      display: block;
+    }
+
+    .tiktok-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .tiktok-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s var(--ease-lux);
+    }
+
+    .tiktok-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .tiktok-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.6) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+      color: #FFFFFF;
+    }
+
+    .tiktok-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .tiktok-card:hover .tiktok-play-btn {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text-dark);
+    }
+
+    .tiktok-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+    }
+
+    .tiktok-footer-cta {
+      text-align: center;
+    }
+
+    /* ========================================================
+       SECTION 9: PIED DE PAGE (FOOTER)
+       ======================================================== */
+    .footer {
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+      padding: 80px 0 36px;
+    }
+
+    /* Newsletter box */
+    .newsletter-box {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 56px;
+      margin-bottom: 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 768px) {
+      .newsletter-box {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .newsletter-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 13px 20px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #FFFFFF;
+      font-size: 0.9375rem;
+    }
+
+    .newsletter-input:focus {
+      border-color: var(--gold);
+      outline: none;
+    }
+
+    .newsletter-feedback {
+      font-size: 0.8125rem;
+      color: var(--gold);
+      display: none;
+      margin-top: 8px;
+    }
+
+    /* 4 Colonnes Footer */
+    .footer-columns-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+
+    @media (min-width: 900px) {
+      .footer-columns-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+      }
+    }
+
+    .footer-col-title {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links-list a {
+      color: #999999;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links-list a:hover {
+      color: #FFFFFF;
+    }
+
+    /* Footer Bottom Strip & Payments */
+    .footer-bottom-strip {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+      color: #777777;
+      font-size: 0.8125rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom-strip {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .payment-badges-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .payment-badge {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+    }
+
+    /* ========================================================
+       BARRE QUIZ FLOTTANTE (BOTTOM BAR)
+       ======================================================== */
+    .floating-quiz-bar {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      z-index: 90;
+      background-color: #FFFFFF;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14);
+      border-radius: 9999px;
+      padding: 8px 12px 8px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: transform 0.4s var(--ease-lux), opacity 0.4s ease;
+      opacity: 0;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      max-width: 90vw;
+    }
+
+    .floating-quiz-bar.visible {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .floating-quiz-text {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      white-space: nowrap;
+    }
+
+    .floating-quiz-close {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888888;
+      transition: color 0.2s, background-color 0.2s;
+    }
+
+    .floating-quiz-close:hover {
+      color: var(--text-dark);
+      background-color: #F0F0F0;
+    }
+
+    /* ========================================================
+       BOUTONS FLOTTANTS: WHATSAPP & RETOUR EN HAUT
+       ======================================================== */
+    .floating-whatsapp-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 85;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #25D366;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+      transition: transform 0.25s var(--ease-lux);
+      animation: pulseWhatsApp 6s infinite ease-in-out;
+    }
+
+    .floating-whatsapp-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+    }
+
+    @keyframes pulseWhatsApp {
+      0%, 85%, 100% {
+        transform: scale(1);
+      }
+      90% {
+        transform: scale(1.08);
+      }
+      95% {
+        transform: scale(0.96);
+      }
+    }
+
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 92px;
+      right: 24px;
+      z-index: 85;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ECECEC;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s var(--ease-lux);
+    }
+
+    .scroll-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .scroll-top-btn:hover {
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+    }
+
+    /* ========================================================
+       TIROIR MINI-PANIER (CART DRAWER)
+       ======================================================== */
+    .cart-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(17, 17, 17, 0.45);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 200;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .cart-drawer-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 440px;
+      background-color: #FFFFFF;
+      z-index: 210;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.35s var(--ease-lux);
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-drawer-header {
+      padding: 24px;
+      border-bottom: 1px solid #EEEEEE;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cart-drawer-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .cart-close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #F4F4F4;
+      color: var(--text-dark);
+      transition: background-color 0.2s;
+    }
+
+    .cart-close-btn:hover {
+      background-color: #E6E6E6;
+    }
+
+    .cart-items-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .cart-empty-state {
+      margin: auto;
+      text-align: center;
+      color: #888888;
+      padding: 40px 20px;
+    }
+
+    .cart-empty-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .cart-item-row {
+      display: flex;
+      gap: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #F0F0F0;
+      align-items: center;
+    }
+
+    .cart-item-thumb {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      object-fit: cover;
+      background-color: #F8F8F8;
+      flex-shrink: 0;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-name {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .cart-item-price {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #666666;
+      margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .cart-item-qty-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .qty-stepper {
+      display: flex;
+      align-items: center;
+      border: 1px solid #DDDDDD;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .qty-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--text-dark);
+      transition: background-color 0.15s;
+    }
+
+    .qty-btn:hover {
+      background-color: #F0F0F0;
+    }
+
+    .qty-val {
+      padding: 0 8px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .cart-item-remove-btn {
+      color: #999999;
+      font-size: 0.75rem;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+
+    .cart-item-remove-btn:hover {
+      color: #D32F2F;
+    }
+
+    .cart-drawer-footer {
+      padding: 24px;
+      border-top: 1px solid #EEEEEE;
+      background-color: #FAFAFA;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cart-summary-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: #666666;
+    }
+
+    .cart-total-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      padding-top: 8px;
+      border-top: 1px solid #E8E8E8;
+    }
+
+    .btn-whatsapp-checkout {
+      background-color: #25D366;
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-whatsapp-checkout:hover {
+      background-color: #1EBE5D;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+    }
+
+    /* Notification Toast "Añadido" */
+    .toast-notification {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(40px);
+      background-color: var(--text-dark);
+      color: #FFFFFF;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      z-index: 300;
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.3s var(--ease-lux), opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .toast-notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ========================================================
+       MODAL FICHE RAPIDE (QUICK VIEW) & MODAL GUIDE
+       ======================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(17, 17, 17, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 250;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .quick-view-modal {
+      background-color: #FFFFFF;
+      border-radius: 36px;
+      max-width: 840px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 36px;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      transform: scale(0.95);
+      transition: transform 0.3s var(--ease-lux);
+    }
+
+    .modal-overlay.open .quick-view-modal {
+      transform: scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #F4F4F4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dark);
+      transition: background-color 0.2s;
+      z-index: 10;
+    }
+
+    .modal-close-btn:hover {
+      background: #E8E8E8;
+    }
+
+    .quick-view-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .quick-view-grid {
+        grid-template-columns: 1fr 1.1fr;
+        gap: 48px;
+      }
+    }
+
+    .modal-capsule-visual {
+      width: 100%;
+      height: 380px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .modal-capsule-visual img {
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
+      border-radius: 9999px;
+    }
+
+    .modal-info-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-product-cat {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #888888;
+      margin-bottom: 8px;
+    }
+
+    .modal-product-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+
+    .modal-product-price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .modal-product-desc {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .modal-add-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Modal Guide Specific */
+    .guide-modal-content {
+      max-width: 680px;
+    }
+
+    .guide-modal-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+
+    /* ========================================================
+       ANIMATIONS ET EFFETS D'APPARITION (CASCADE HERO & SCROLL)
+       ======================================================== */
+    .fade-cascade {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s var(--ease-lux), transform 0.6s var(--ease-lux);
+    }
+
+    .fade-cascade.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* PREFERS-REDUCED-MOTION */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================
+       1. EN-TÊTE FIXE
+       ======================================================== -->
+  <header class="header" id="mainHeader">
+    <div class="container header-inner">
+      <!-- Logo Monogramme MH + Maison Hermance -->
+      <a href="#inicio" class="brand-logo" aria-label="Maison Hermance - Inicio">
+        <div class="logo-badge" aria-hidden="true">MH</div>
+        <span class="brand-name">Maison Hermance</span>
+      </a>
+
+      <!-- Menu centré -->
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="#inicio" class="nav-link active" data-i18n="nav_inicio">Inicio</a>
+        <span class="nav-separator" aria-hidden="true">·</span>
+        <a href="#perfumes" class="nav-link" data-i18n="nav_perfumes">Perfumes</a>
+        <span class="nav-separator" aria-hidden="true">·</span>
+        <a href="#bolsos" class="nav-link" data-i18n="nav_bolsos">Bolsos</a>
+        <span class="nav-separator" aria-hidden="true">·</span>
+        <a href="#quiz" class="nav-link" data-i18n="nav_quiz">Quiz</a>
+      </nav>
+
+      <!-- Actions droite: ES|FR|EN, Panier, Burger -->
+      <div class="header-actions">
+        <div class="lang-switcher" aria-label="Selección de idioma">
+          <button class="lang-btn active" data-lang="ES" aria-label="Español">ES</button>
+          <span class="lang-pipe" aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang="FR" aria-label="Français">FR</button>
+          <span class="lang-pipe" aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang="EN" aria-label="English">EN</button>
+        </div>
+
+        <button class="cart-btn" id="openCartBtn" aria-label="Abrir carrito de compras">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+            <path d="M3 6h18"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-count" id="headerCartCount">0</span>
+        </button>
+
+        <button class="menu-toggle" id="openMobileMenuBtn" aria-label="Abrir menú de navegación">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  <aside class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+    <div class="mobile-menu-header">
+      <div class="brand-logo">
+        <div class="logo-badge">MH</div>
+        <span class="brand-name">Maison Hermance</span>
+      </div>
+      <button class="cart-close-btn" id="closeMobileMenuBtn" aria-label="Cerrar menú">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="#inicio" class="mobile-nav-item" data-i18n="nav_inicio">Inicio</a>
+      <a href="#perfumes" class="mobile-nav-item" data-i18n="nav_perfumes">Perfumes</a>
+      <a href="#bolsos" class="mobile-nav-item" data-i18n="nav_bolsos">Bolsos</a>
+      <a href="#quiz" class="mobile-nav-item" data-i18n="nav_quiz">Quiz</a>
+      <a href="#guias" class="mobile-nav-item" data-i18n="nav_guias">Guías</a>
+    </div>
+    <div class="mobile-menu-footer">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ES">ES</button>
+        <span class="lang-pipe">|</span>
+        <button class="lang-btn" data-lang="FR">FR</button>
+        <span class="lang-pipe">|</span>
+        <button class="lang-btn" data-lang="EN">EN</button>
+      </div>
+      <p style="font-size:0.8125rem; color:#888888;">Maison Hermance &middot; Elegancia y Fragancias</p>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ========================================================
+         2. HERO SECTION
+         ======================================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Colonne Gauche -->
+          <div class="hero-content">
+            <h1 class="hero-title fade-cascade" style="transition-delay: 0.12s;">
+              El perfume<br />que te<br />define.
+            </h1>
+            <p class="hero-description fade-cascade" style="transition-delay: 0.24s;" data-i18n="hero_subtitle">
+              Perfumes y bolsos seleccionados con cuidado. Envío a toda Europa.
+            </p>
+            <div class="hero-cta-group fade-cascade" style="transition-delay: 0.36s;">
+              <a href="#quiz" class="btn-pill btn-primary" id="heroQuizCTA" data-i18n="hero_btn">
+                Encuentra tu perfume
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14"/>
+                  <path d="m12 5 7 7-7 7"/>
+                </svg>
+              </a>
+              <a href="#seleccion" class="btn-pill btn-secondary" data-i18n="hero_btn_explore">
+                Ver colección
+              </a>
+            </div>
+            <div class="hero-trust fade-cascade" style="transition-delay: 0.48s;">
+              <span class="trust-dot"></span>
+              <span data-i18n="hero_trust">Envío express gratuito desde 60 € &middot; Pago seguro por WhatsApp</span>
+            </div>
+          </div>
+
+          <!-- Colonne Droite: Photo, SVGs Flottants, Étiquette Prix & 2 Cercles -->
+          <div class="hero-visual-wrapper fade-cascade" style="transition-delay: 0.25s;">
+            
+            <!-- SVGs décoratifs flottants (pétales de rose, tranches d'agrume, fleurs de vanille) -->
+            <div class="floating-botanicals" aria-hidden="true">
+              <!-- Pétale de rose 1 -->
+              <svg class="float-item petal-1" viewBox="0 0 60 60" fill="none">
+                <path d="M30 5 C45 15, 55 35, 40 50 C25 60, 10 45, 12 30 C14 15, 20 8, 30 5 Z" fill="#F6CFC9" opacity="0.85"/>
+                <path d="M30 15 C36 22, 38 34, 30 42" stroke="#E5ABA2" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+              </svg>
+              
+              <!-- Tranche d'agrume / bergamote -->
+              <svg class="float-item citrus-1" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="26" stroke="#B8924A" stroke-width="2.5" fill="#FBF3DE" opacity="0.9"/>
+                <circle cx="30" cy="30" r="22" stroke="#DFC07A" stroke-width="1" stroke-dasharray="2 3"/>
+                <path d="M30 8 L30 52 M8 30 L52 30 M14 14 L46 46 M14 46 L46 14" stroke="#B8924A" stroke-width="1.2" opacity="0.5"/>
+                <circle cx="30" cy="30" r="4" fill="#B8924A"/>
+              </svg>
+
+              <!-- Fleur de vanille délicate -->
+              <svg class="float-item vanilla-1" viewBox="0 0 60 60" fill="none">
+                <path d="M30 30 C30 10, 36 6, 40 10 C44 14, 40 24, 30 30 Z" fill="#FFF8E7" stroke="#F3E4B8" stroke-width="1.5"/>
+                <path d="M30 30 C48 24, 54 28, 52 34 C50 40, 38 38, 30 30 Z" fill="#FFF8E7" stroke="#F3E4B8" stroke-width="1.5"/>
+                <path d="M30 30 C38 46, 34 52, 28 52 C22 52, 24 40, 30 30 Z" fill="#FFF8E7" stroke="#F3E4B8" stroke-width="1.5"/>
+                <path d="M30 30 C12 38, 8 32, 10 26 C12 20, 22 24, 30 30 Z" fill="#FFF8E7" stroke="#F3E4B8" stroke-width="1.5"/>
+                <path d="M30 30 C18 14, 22 8, 26 10 C30 12, 30 20, 30 30 Z" fill="#FFF8E7" stroke="#F3E4B8" stroke-width="1.5"/>
+                <circle cx="30" cy="30" r="3.5" fill="#B8924A"/>
+              </svg>
+
+              <!-- Pétale de rose 2 -->
+              <svg class="float-item petal-2" viewBox="0 0 60 60" fill="none">
+                <path d="M25 8 C38 12, 48 28, 36 44 C24 54, 12 40, 14 26 C16 12, 20 6, 25 8 Z" fill="#F6CFC9" opacity="0.75"/>
+              </svg>
+            </div>
+
+            <!-- Grande Photo Centrale Hero (Hand holding flacon sur fond clair) -->
+            <div class="hero-main-image-box">
+              <img id="heroMainImage" 
+                   src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=800" 
+                   alt="Maison Hermance flacon d'exception" 
+                   loading="eager" 
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this, 'lilas')" />
+            </div>
+
+            <!-- Étiquette de prix 79,90 € reliée par trait fin et point -->
+            <div class="hero-price-tag-wrap" aria-label="Precio destacado 79,90 euros">
+              <div class="price-tag-line"></div>
+              <div class="price-tag-pill">79,90 €</div>
+            </div>
+
+            <!-- En bas à droite: Deux cercles photo qui se chevauchent + pastille Novedad -->
+            <div class="hero-overlapping-circles">
+              <div class="overlap-circle overlap-circle-1" title="Bolso Maison Hermance">
+                <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=400" 
+                     alt="Bolso artesanal Maison Hermance" 
+                     referrerpolicy="no-referrer"
+                     onerror="imgFallback(this, 'sable')" />
+              </div>
+              <div class="overlap-circle overlap-circle-2" title="Perfume Maison Hermance">
+                <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&q=80&w=400" 
+                     alt="Perfume Ambre Royal" 
+                     referrerpolicy="no-referrer"
+                     onerror="imgFallback(this, 'rose')" />
+              </div>
+              <div class="overlap-badge-novedad" data-i18n="badge_novedad">Novedad</div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3. DOS UNIVERSOS (FOND VERT SAUGE TRÈS CLAIR)
+         ======================================================== -->
+    <section class="universes-section" id="universos">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title fade-cascade" data-i18n="universes_title">Dos universos</h2>
+        </div>
+
+        <div class="universes-grid">
+          
+          <!-- Capsule Perfumes -->
+          <article class="universe-capsule universe-perfumes fade-cascade" onclick="filterCatalog('perfumes')">
+            <h3 class="universe-title" data-i18n="nav_perfumes">Perfumes</h3>
+            <div class="universe-img-wrap">
+              <img src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=600" 
+                   alt="Colección de perfumes Maison Hermance" 
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this, 'lilas')" />
+            </div>
+            <span class="btn-pill btn-primary" data-i18n="universe_discover">Descubrir</span>
+          </article>
+
+          <!-- Capsule Bolsos -->
+          <article class="universe-capsule universe-bolsos fade-cascade" onclick="filterCatalog('bolsos')">
+            <h3 class="universe-title" data-i18n="nav_bolsos">Bolsos</h3>
+            <div class="universe-img-wrap">
+              <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&q=80&w=600" 
+                   alt="Colección de bolsos en piel Maison Hermance" 
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this, 'sable')" />
+            </div>
+            <span class="btn-pill btn-primary" data-i18n="universe_discover">Descubrir</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. QUIZ (TU PERFUME EN 5 PREGUNTAS)
+         ======================================================== -->
+    <section class="quiz-section" id="quiz">
+      <div class="container">
+        <div class="quiz-grid">
+          
+          <!-- Gauche: Explications Quiz -->
+          <div class="fade-cascade">
+            <p class="section-kicker" data-i18n="quiz_kicker">Asesor personal</p>
+            <h2 class="section-title" style="margin-bottom: 20px;" data-i18n="quiz_main_title">
+              Tu perfume en 5 preguntas.
+            </h2>
+            <p style="font-size: 1.125rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 32px;" data-i18n="quiz_desc">
+              Ocasión, estilo y presupuesto. Recibe 3 recomendaciones por email.
+            </p>
+            <button class="btn-pill btn-primary" id="startQuizScrollBtn" data-i18n="quiz_start_btn">
+              Empezar el quiz
+            </button>
+          </div>
+
+          <!-- Droite: Carte Arrondie Fond Noir (#111111) Interactif -->
+          <div class="quiz-card fade-cascade" id="quizContainer">
+            
+            <!-- Écran questions -->
+            <div class="quiz-step-view" id="quizStepView">
+              <div class="quiz-header-bar">
+                <span class="quiz-step-label" id="quizStepIndicator">Pregunta 1 / 5</span>
+              </div>
+              <div class="quiz-progress-track">
+                <div class="quiz-progress-fill" id="quizProgressFill"></div>
+              </div>
+
+              <h3 class="quiz-question-title" id="quizQuestionText">
+                ¿Para qué ocasión buscas tu fragancia?
+              </h3>
+
+              <div class="quiz-options-list" id="quizOptionsList">
+                <!-- Généré dynamiquement par JS -->
+              </div>
+
+              <div class="quiz-footer-actions">
+                <button class="quiz-back-btn" id="quizBackBtn" style="visibility: hidden;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6"/>
+                  </svg>
+                  <span data-i18n="quiz_back">Atrás</span>
+                </button>
+                <span style="font-size:0.75rem; color:#666666;" data-i18n="quiz_instruction">Haz clic para seleccionar</span>
+              </div>
+            </div>
+
+            <!-- Écran résultats (après question 5) -->
+            <div class="quiz-results-container" id="quizResultsView">
+              <h3 class="quiz-results-title" data-i18n="quiz_results_title">Tus recomendaciones exclusivas</h3>
+              <p class="quiz-results-subtitle" data-i18n="quiz_results_subtitle">Seleccionadas cuidadosamente según tu perfil:</p>
+
+              <div class="quiz-recom-list" id="quizRecommendationsList">
+                <!-- 3 Produits recommandés injectés en JS -->
+              </div>
+
+              <div class="quiz-email-box">
+                <form class="quiz-email-form" id="quizEmailForm" onsubmit="handleQuizEmailSubmit(event)">
+                  <input type="email" 
+                         class="quiz-email-input" 
+                         id="quizEmailInput" 
+                         placeholder="Tu email" 
+                         required 
+                         aria-label="Tu email para recibir recomendaciones" />
+                  <button type="submit" class="btn-pill btn-primary btn-sm" data-i18n="quiz_receive_btn">
+                    Recibir mis recomendaciones
+                  </button>
+                </form>
+                <div class="quiz-success-msg" id="quizSuccessMsg" data-i18n="quiz_success_text">
+                  ¡Recomendaciones enviadas con éxito a tu bandeja de entrada!
+                </div>
+              </div>
+
+              <div style="margin-top: 24px; text-align: center;">
+                <button class="btn-pill btn-secondary btn-sm" style="color:#FFF; border-color:rgba(255,255,255,0.3);" onclick="restartQuiz()" data-i18n="quiz_repeat_btn">
+                  Repetir el quiz
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. NUESTRA SELECCIÓN (SHOWCASE PRODUITS)
+         ======================================================== -->
+    <section class="catalog-section" id="seleccion">
+      <div class="container">
+        
+        <div class="section-header">
+          <h2 class="section-title fade-cascade" data-i18n="catalog_title">Nuestra selección</h2>
+        </div>
+
+        <!-- Onglets avec trait de soulignement animé -->
+        <div class="filter-tabs-container fade-cascade">
+          <div class="filter-tabs-wrapper" id="filterTabsWrapper">
+            <button class="filter-tab active" data-category="todos" onclick="setCatalogFilter('todos', this)" data-i18n="tab_todos">Todos</button>
+            <button class="filter-tab" id="tabPerfumes" data-category="perfumes" onclick="setCatalogFilter('perfumes', this)" data-i18n="nav_perfumes">Perfumes</button>
+            <button class="filter-tab" id="tabBolsos" data-category="bolsos" onclick="setCatalogFilter('bolsos', this)" data-i18n="nav_bolsos">Bolsos</button>
+            <div class="filter-slider" id="filterSlider"></div>
+          </div>
+        </div>
+
+        <!-- Grille de Produits dans leurs Capsules Pastel -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Injecté dynamiquement par JavaScript pour réactivité instantanée -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Ancre pour scroll Bolsos et Perfumes -->
+    <div id="perfumes"></div>
+    <div id="bolsos"></div>
+
+    <!-- ========================================================
+         6. OPINIONES DE NUESTROS CLIENTES (CARROUSEL)
+         ======================================================== -->
+    <section class="reviews-section" id="opiniones">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title fade-cascade" data-i18n="reviews_title">Opiniones de nuestros clientes</h2>
+        </div>
+
+        <div class="reviews-carousel-wrapper fade-cascade" id="reviewsCarouselWrapper">
+          <div class="reviews-track-container">
+            <div class="reviews-track" id="reviewsTrack">
+              
+              <!-- Avis 1 -->
+              <div class="review-slide">
+                <div class="review-card">
+                  <div class="stars-group" aria-label="5 estrellas">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </div>
+                  <p class="review-quote">
+                    «El aroma de Noir Élégance dura todo el día y el bolso camel tiene un acabado impecable. Un lujo accesible y con una atención maravillosa.»
+                  </p>
+                  <div class="review-author-wrap">
+                    <img class="review-avatar" 
+                         src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" 
+                         alt="Laura" 
+                         referrerpolicy="no-referrer"
+                         onerror="imgFallback(this, 'rose')" />
+                    <div>
+                      <div class="review-author-name">Laura</div>
+                      <div class="review-author-city">Madrid</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Avis 2 -->
+              <div class="review-slide">
+                <div class="review-card">
+                  <div class="stars-group" aria-label="5 estrellas">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </div>
+                  <p class="review-quote">
+                    «Pedí Ambre Royal para una ocasión especial y superó todas mis expectativas. El envío a España fue rapidísimo y el paquete llegó perfecto.»
+                  </p>
+                  <div class="review-author-wrap">
+                    <img class="review-avatar" 
+                         src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=200" 
+                         alt="Carmen" 
+                         referrerpolicy="no-referrer"
+                         onerror="imgFallback(this, 'sable')" />
+                    <div>
+                      <div class="review-author-name">Carmen</div>
+                      <div class="review-author-city">Barcelona</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Avis 3 -->
+              <div class="review-slide">
+                <div class="review-card">
+                  <div class="stars-group" aria-label="5 estrellas">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </div>
+                  <p class="review-quote">
+                    «La presentación es exquisita. Los detalles, el empaque y la calidad del cuero son dignos de las casas más selectas de Europa.»
+                  </p>
+                  <div class="review-author-wrap">
+                    <img class="review-avatar" 
+                         src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200" 
+                         alt="Elena" 
+                         referrerpolicy="no-referrer"
+                         onerror="imgFallback(this, 'menthe')" />
+                    <div>
+                      <div class="review-author-name">Elena</div>
+                      <div class="review-author-city">Valencia</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Contrôles Flèches et Points -->
+          <div class="carousel-controls">
+            <button class="carousel-arrow" id="reviewPrevBtn" aria-label="Aviso anterior">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+              </svg>
+            </button>
+            <div class="carousel-dots" id="reviewDots">
+              <span class="carousel-dot active" data-index="0"></span>
+              <span class="carousel-dot" data-index="1"></span>
+              <span class="carousel-dot" data-index="2"></span>
+            </div>
+            <button class="carousel-arrow" id="reviewNextBtn" aria-label="Aviso siguiente">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. GUÍAS PARA ELEGIR BIEN
+         ======================================================== -->
+    <section class="guides-section" id="guias">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title fade-cascade" data-i18n="guides_title">Guías para elegir bien</h2>
+        </div>
+
+        <div class="guides-grid">
+          
+          <!-- Guide 1: Cómo elegir tu perfume -->
+          <article class="guide-card fade-cascade">
+            <div class="guide-capsule" style="background-color: var(--pastel-lilac);">
+              <img src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=600" 
+                   alt="Cómo elegir tu perfume" 
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this, 'lilas')" />
+            </div>
+            <h3 class="guide-title" data-i18n="guide_1_title">Cómo elegir tu perfume</h3>
+            <button class="btn-pill btn-secondary btn-sm" onclick="openGuideModal(1)" data-i18n="guide_read_btn">
+              Leer la guía
+            </button>
+          </article>
+
+          <!-- Guide 2: Ideas de regalo -->
+          <article class="guide-card fade-cascade">
+            <div class="guide-capsule" style="background-color: var(--pastel-sand);">
+              <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600" 
+                   alt="Ideas de regalo Maison Hermance" 
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this, 'sable')" />
+            </div>
+            <h3 class="guide-title" data-i18n="guide_2_title">Ideas de regalo</h3>
+            <button class="btn-pill btn-secondary btn-sm" onclick="openGuideModal(2)" data-i18n="guide_read_btn">
+              Leer la guía
+            </button>
+          </article>
+
+          <!-- Guide 3: Cómo elegir tu bolso -->
+          <article class="guide-card fade-cascade">
+            <div class="guide-capsule" style="background-color: var(--pastel-mint);">
+              <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600" 
+                   alt="Cómo elegir tu bolso" 
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this, 'menthe')" />
+            </div>
+            <h3 class="guide-title" data-i18n="guide_3_title">Cómo elegir tu bolso</h3>
+            <button class="btn-pill btn-secondary btn-sm" onclick="openGuideModal(3)" data-i18n="guide_read_btn">
+              Leer la guía
+            </button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         8. SÍGUENOS EN TIKTOK
+         ======================================================== -->
+    <section class="tiktok-section" id="tiktok">
+      <div class="container">
+        
+        <div class="section-header">
+          <h2 class="section-title fade-cascade" data-i18n="tiktok_title">Síguenos en TikTok</h2>
+          <p style="font-size: 1.125rem; font-weight: 700; letter-spacing: 0.05em; color: var(--text-dark); margin-top: 6px;">
+            @MAISON HERMANCE
+          </p>
+        </div>
+
+        <!-- Grille de 4 vignettes verticales 9:16 -->
+        <div class="tiktok-grid fade-cascade">
+          
+          <a href="https://www.tiktok.com/@maisonhermance" target="_blank" rel="noopener noreferrer" class="tiktok-card" aria-label="Ver video de TikTok">
+            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=600" 
+                 alt="Unboxing bolso Maison Hermance" 
+                 referrerpolicy="no-referrer"
+                 onerror="imgFallback(this, 'sable')" />
+            <div class="tiktok-overlay">
+              <div class="tiktok-play-btn" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+              <span class="tiktok-label" data-i18n="tiktok_clip_1">Unboxing bolso artesanal</span>
+            </div>
+          </a>
+
+          <a href="https://www.tiktok.com/@maisonhermance" target="_blank" rel="noopener noreferrer" class="tiktok-card" aria-label="Ver video de TikTok">
+            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=600" 
+                 alt="Primer plano perfume Maison Hermance" 
+                 referrerpolicy="no-referrer"
+                 onerror="imgFallback(this, 'lilas')" />
+            <div class="tiktok-overlay">
+              <div class="tiktok-play-btn" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+              <span class="tiktok-label" data-i18n="tiktok_clip_2">Esencia Noir Élégance</span>
+            </div>
+          </a>
+
+          <a href="https://www.tiktok.com/@maisonhermance" target="_blank" rel="noopener noreferrer" class="tiktok-card" aria-label="Ver video de TikTok">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=600" 
+                 alt="Preparación caja regalo Maison Hermance" 
+                 referrerpolicy="no-referrer"
+                 onerror="imgFallback(this, 'rose')" />
+            <div class="tiktok-overlay">
+              <div class="tiktok-play-btn" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+              <span class="tiktok-label" data-i18n="tiktok_clip_3">Puesta en escena regalo</span>
+            </div>
+          </a>
+
+          <a href="https://www.tiktok.com/@maisonhermance" target="_blank" rel="noopener noreferrer" class="tiktok-card" aria-label="Ver video de TikTok">
+            <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&q=80&w=600" 
+                 alt="Estilo y look con bolso Maison Hermance" 
+                 referrerpolicy="no-referrer"
+                 onerror="imgFallback(this, 'menthe')" />
+            <div class="tiktok-overlay">
+              <div class="tiktok-play-btn" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+              <span class="tiktok-label" data-i18n="tiktok_clip_4">Styling Bolso Burdeos</span>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="tiktok-footer-cta fade-cascade">
+          <a href="https://www.tiktok.com/@maisonhermance" target="_blank" rel="noopener noreferrer" class="btn-pill btn-primary" data-i18n="tiktok_btn">
+            Seguir
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       9. PIED DE PAGE (FOOTER NOIR #111111)
+       ======================================================== -->
+  <footer class="footer">
+    <div class="container">
+      
+      <!-- Newsletter -->
+      <div class="newsletter-box">
+        <div>
+          <h3 class="newsletter-heading" data-i18n="footer_news_title">Recibe nuestras novedades</h3>
+          <p style="font-size:0.875rem; color:#888888; margin-top:4px;" data-i18n="footer_news_desc">
+            Fragancias exclusivas, lanzamientos y acceso prioritario.
+          </p>
+        </div>
+        <div>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+            <input type="email" 
+                   class="newsletter-input" 
+                   id="newsletterInput" 
+                   placeholder="Tu email" 
+                   required 
+                   aria-label="Tu email para la newsletter" />
+            <button type="submit" class="btn-pill btn-white" data-i18n="footer_news_btn">
+              Suscribirme
+            </button>
+          </form>
+          <div class="newsletter-feedback" id="newsletterFeedback" data-i18n="footer_news_thanks">
+            ¡Gracias por suscribirte a Maison Hermance!
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Colonnes -->
+      <div class="footer-columns-grid">
+        
+        <!-- Col 1: Tienda -->
+        <div>
+          <h4 class="footer-col-title" data-i18n="footer_col_shop">Tienda</h4>
+          <ul class="footer-links-list">
+            <li><a href="#perfumes" onclick="filterCatalog('perfumes')" data-i18n="nav_perfumes">Perfumes</a></li>
+            <li><a href="#bolsos" onclick="filterCatalog('bolsos')" data-i18n="nav_bolsos">Bolsos</a></li>
+            <li><a href="#guias" data-i18n="footer_link_gifts">Cofres regalo</a></li>
+            <li><a href="#quiz" data-i18n="nav_quiz">Quiz</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Ayuda -->
+        <div>
+          <h4 class="footer-col-title" data-i18n="footer_col_help">Ayuda</h4>
+          <ul class="footer-links-list">
+            <li><a href="#ayuda" onclick="openHelpModal('shipping')" data-i18n="footer_link_shipping">Envíos y entregas</a></li>
+            <li><a href="#ayuda" onclick="openHelpModal('returns')" data-i18n="footer_link_returns">Devoluciones</a></li>
+            <li><a href="#ayuda" onclick="openHelpModal('faq')" data-i18n="footer_link_faq">Preguntas frecuentes</a></li>
+            <li><a href="https://wa.me/34641016013" target="_blank" rel="noopener noreferrer" data-i18n="footer_link_contact">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Legal -->
+        <div>
+          <h4 class="footer-col-title" data-i18n="footer_col_legal">Legal</h4>
+          <ul class="footer-links-list">
+            <li><a href="#legal" onclick="openHelpModal('legal')" data-i18n="footer_link_legal">Aviso legal</a></li>
+            <li><a href="#legal" onclick="openHelpModal('privacy')" data-i18n="footer_link_privacy">Política de privacidad</a></li>
+            <li><a href="#legal" onclick="openHelpModal('cookies')" data-i18n="footer_link_cookies">Política de cookies</a></li>
+            <li><a href="#legal" onclick="openHelpModal('terms')" data-i18n="footer_link_terms">Términos y condiciones</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contacto -->
+        <div>
+          <h4 class="footer-col-title" data-i18n="footer_col_contact">Contacto</h4>
+          <ul class="footer-links-list">
+            <li><a href="tel:+34641016013">+34 641 016 013</a></li>
+            <li><a href="https://wa.me/34641016013" target="_blank" rel="noopener noreferrer">WhatsApp (+34 641 016 013)</a></li>
+            <li><a href="https://www.tiktok.com/@maisonhermance" target="_blank" rel="noopener noreferrer">TikTok @MAISON HERMANCE</a></li>
+            <li><span style="color:#777777; font-size:0.875rem;">Madrid &middot; Europa</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Ligne Finale & Icônes de paiement -->
+      <div class="footer-bottom-strip">
+        <p data-i18n="footer_copyright">&copy; 2026 Maison Hermance. Todos los derechos reservados.</p>
+        
+        <div class="payment-badges-row" aria-label="Métodos de pago aceptados">
+          <!-- Visa -->
+          <span class="payment-badge" title="Visa">
+            <svg width="34" height="14" viewBox="0 0 36 14" fill="currentColor">
+              <path d="M14.5 1.5 L12 12.5 H9.5 L12 1.5 Z M24.5 1.7 C23.9 1.5 22.8 1.3 21.6 1.3 C18.7 1.3 16.7 2.8 16.7 4.9 C16.7 6.5 18.1 7.4 19.2 8 C20.3 8.6 20.7 9 20.7 9.5 C20.7 10.3 19.7 10.7 18.8 10.7 C17.7 10.7 17 10.5 16.2 10.1 L15.8 9.9 L15.4 12 C16.1 12.3 17.3 12.6 18.6 12.6 C21.7 12.6 23.7 11 23.7 8.8 C23.7 7.1 22.3 6.1 21 5.5 C19.9 4.9 19.3 4.5 19.3 4 C19.3 3.4 20 2.9 21.1 2.9 C22 2.9 22.8 3.1 23.4 3.4 Z M31.6 1.5 H29.5 C28.8 1.5 28.3 1.7 28 2.3 L24 12.5 H26.7 L27.2 11.1 H30.5 L30.8 12.5 H33.2 Z M28 8.8 L29.3 5.1 L30.1 8.8 Z M7.8 1.5 L5.3 8.8 L5 7.3 C4.5 5.5 3.1 3.5 1.4 2.5 L3.6 12.5 H6.3 L10.5 1.5 Z"/>
+            </svg>
+          </span>
+          <!-- Mastercard -->
+          <span class="payment-badge" title="Mastercard">
+            <svg width="28" height="18" viewBox="0 0 28 18" fill="none">
+              <circle cx="10" cy="9" r="7" fill="#EB001B"/>
+              <circle cx="18" cy="9" r="7" fill="#F79E1B" fill-opacity="0.85"/>
+            </svg>
+          </span>
+          <!-- PayPal -->
+          <span class="payment-badge" title="PayPal">
+            <span style="font-weight: 800; font-size: 0.75rem; letter-spacing: -0.05em; color: #0079C1;">Pay<span style="color: #00457C;">Pal</span></span>
+          </span>
+          <!-- Klarna -->
+          <span class="payment-badge" title="Klarna">
+            <span style="font-weight: 800; font-size: 0.75rem; color: #FFA8CD;">Klarna.</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       BARRE QUIZ FLOTTANTE (APPARAÎT APRÈS 5 SECONDES)
+       ======================================================== -->
+  <aside class="floating-quiz-bar" id="floatingQuizBar" aria-label="Acceso rápido al quiz">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+    </svg>
+    <span class="floating-quiz-text" data-i18n="float_quiz_text">¿Qué perfume es para ti?</span>
+    <a href="#quiz" class="btn-pill btn-primary btn-sm" id="floatingQuizActionBtn" data-i18n="float_quiz_btn">
+      Hacer el quiz
+    </a>
+    <button class="floating-quiz-close" id="closeFloatingQuizBtn" aria-label="Cerrar barra flotante">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </aside>
+
+  <!-- BOUTON WHATSAPP FLOTTANT (PULSE TOUTES LES 6S) -->
+  <a href="https://wa.me/34641016013" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-whatsapp-btn" 
+     aria-label="Contactar por WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.476-.15-.677.15-.2.301-.778.98-.954 1.18-.175.201-.351.226-.652.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.787-1.676-2.088-.175-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.151-.175.201-.301.301-.502.1-.201.05-.376-.025-.526-.075-.151-.677-1.631-.928-2.233-.244-.587-.492-.507-.677-.517-.175-.01-.376-.01-.577-.01-.201 0-.527.075-.803.376-.276.301-1.053 1.029-1.053 2.511 0 1.482 1.079 2.912 1.23 3.113.15.201 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.635.722.23 1.38.197 1.9.12.579-.087 1.78-.728 2.03-1.431.251-.703.251-1.305.176-1.431-.075-.126-.276-.201-.577-.352zM12 2C6.477 2 2 6.477 2 12c0 1.96.568 3.79 1.545 5.341L2 22l4.808-1.503A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+    </svg>
+  </a>
+
+  <!-- BOUTON RETOUR EN HAUT (VOLVER ARRIBA APRÈS 600PX) -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Volver arriba">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- ========================================================
+       TIROIR MINI-PANIER (SLIDE-OVER LATÉRAL)
+       ======================================================== -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">
+        <span data-i18n="cart_title">Tu carrito</span> 
+        (<span id="drawerCartTotalCount">0</span>)
+      </h3>
+      <button class="cart-close-btn" id="closeCartBtn" aria-label="Cerrar carrito">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Contenu du panier -->
+    <div class="cart-items-body" id="cartItemsContainer">
+      <!-- Rempli en JS ou état vide -->
+    </div>
+
+    <!-- Footer du panier -->
+    <div class="cart-drawer-footer" id="cartFooter">
+      <div class="cart-summary-line">
+        <span data-i18n="cart_shipping_label">Envío a toda Europa</span>
+        <span style="font-weight:700; color:var(--text-dark);" data-i18n="cart_shipping_free">Gratis</span>
+      </div>
+      <div class="cart-total-line">
+        <span data-i18n="cart_total_label">Total</span>
+        <span id="cartDrawerTotalPrice">0,00 €</span>
+      </div>
+      <button class="btn-pill btn-whatsapp-checkout" id="whatsappCheckoutBtn" onclick="checkoutViaWhatsApp()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.476-.15-.677.15-.2.301-.778.98-.954 1.18-.175.201-.351.226-.652.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.787-1.676-2.088-.175-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.151-.175.201-.301.301-.502.1-.201.05-.376-.025-.526-.075-.151-.677-1.631-.928-2.233-.244-.587-.492-.507-.677-.517-.175-.01-.376-.01-.577-.01-.201 0-.527.075-.803.376-.276.301-1.053 1.029-1.053 2.511 0 1.482 1.079 2.912 1.23 3.113.15.201 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.635.722.23 1.38.197 1.9.12.579-.087 1.78-.728 2.03-1.431.251-.703.251-1.305.176-1.431-.075-.126-.276-.201-.577-.352zM12 2C6.477 2 2 6.477 2 12c0 1.96.568 3.79 1.545 5.341L2 22l4.808-1.503A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+        </svg>
+        <span data-i18n="cart_checkout_btn">Finalizar por WhatsApp</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- NOTIFICATION TOAST "AÑADIDO" AVEC COCHE SVG -->
+  <div class="toast-notification" id="toastNotification" role="alert">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+    <span data-i18n="toast_added">Añadido al carrito</span>
+  </div>
+
+  <!-- ========================================================
+       MODAL FICHE RAPIDE (QUICK VIEW)
+       ======================================================== -->
+  <div class="modal-overlay" id="quickViewOverlay" onclick="handleModalOverlayClick(event)">
+    <div class="quick-view-modal" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+      <button class="modal-close-btn" onclick="closeQuickViewModal()" aria-label="Cerrar vista rápida">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <div class="quick-view-grid">
+        <div class="modal-capsule-visual" id="modalCapsuleBg">
+          <img id="modalProductImg" src="" alt="" referrerpolicy="no-referrer" />
+        </div>
+        <div class="modal-info-col">
+          <span class="modal-product-cat" id="modalProductCat">Perfumes</span>
+          <h3 class="modal-product-title" id="modalProductTitle">Nombre Producto</h3>
+          <div class="product-rating" style="margin-bottom:12px;">
+            <div class="stars-group">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span id="modalProductReviews">24 opiniones</span>
+          </div>
+
+          <div class="modal-product-price" id="modalProductPrice">49,90 €</div>
+          <p class="modal-product-desc" id="modalProductDesc">
+            Descripción detallada del producto.
+          </p>
+
+          <div class="modal-add-row">
+            <div class="qty-stepper">
+              <button class="qty-btn" onclick="adjustModalQty(-1)" aria-label="Disminuir cantidad">-</button>
+              <span class="qty-val" id="modalQtyVal">1</span>
+              <button class="qty-btn" onclick="adjustModalQty(1)" aria-label="Aumentar cantidad">+</button>
+            </div>
+            <button class="btn-pill btn-primary" id="modalAddToCartBtn" style="flex:1;" data-i18n="btn_add_to_cart">
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL GUIDE ET AIDE -->
+  <div class="modal-overlay" id="guideOverlay" onclick="handleGuideOverlayClick(event)">
+    <div class="quick-view-modal guide-modal-content" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" onclick="closeGuideModal()" aria-label="Cerrar guía">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <h3 class="modal-product-title" id="guideModalTitle">Guía Maison Hermance</h3>
+      <div class="guide-modal-text" id="guideModalBody"></div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       JAVASCRIPT VANILLA & CONFIGURATION
+       ======================================================== -->
+  <script>
+    /* ========================================================
+       VALEURS CONFIGURABLES
+       ======================================================== */
+    const WHATSAPP_NUMBER = "+34641016013";
+    const TIKTOK_URL = "https://www.tiktok.com/@maisonhermance";
+
+    // URLs d'images directes Unsplash (parfums et maroquinerie de luxe neutres)
+    const IMAGES = {
+      hero: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=800",
+      heroBag: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=400",
+      heroPerfume: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&q=80&w=400",
+      universePerfumes: "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=600",
+      universeBolsos: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&q=80&w=600",
+      p1: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=600",
+      p2: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&q=80&w=600",
+      p3: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=600",
+      p4: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=600",
+      p5: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&q=80&w=600",
+      p6: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=600",
+      guide1: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=600",
+      guide2: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600",
+      guide3: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600"
+    };
+
+    // Produits avec tags quiz et couleurs de capsules pastel
+    const PRODUCTS = [
+      {
+        id: "noir-elegance",
+        nombre: "Noir Élégance – Eau de Parfum 50 ml",
+        categoria: "perfumes",
+        precio: 49.90,
+        precioAnterior: null,
+        badge: null,
+        descuento: null,
+        opiniones: 24,
+        imagen: IMAGES.p1,
+        capsuleColor: "lilas",
+        descripcion: "Flacon en verre fumé noir avec bouchon doré. Un accord boisé captivant de bois de cèdre, cuir délicat et poivre noir, sublimé d'une touche d'iris poudré.",
+        tags: {
+          ocasion: ["noche", "regalo"],
+          familia: ["amaderado", "oriental"],
+          intensidad: ["media", "intensa"],
+          presupuesto: ["menos50"],
+          estilo: ["clasico", "audaz"]
+        }
+      },
+      {
+        id: "ambre-royal",
+        nombre: "Ambre Royal – Eau de Parfum 100 ml",
+        categoria: "perfumes",
+        precio: 79.90,
+        precioAnterior: 99.90,
+        badge: "Novedad",
+        descuento: "-20 %",
+        opiniones: 38,
+        imagen: IMAGES.p2,
+        capsuleColor: "sable",
+        descripcion: "Une fragrance orientale chaleureuse associant ambre gris, vanille bourbon de Madagascar et fève tonka sur un lit de santal crémeux.",
+        tags: {
+          ocasion: ["noche", "dia"],
+          familia: ["oriental", "amaderado"],
+          intensidad: ["intensa"],
+          presupuesto: ["50a80"],
+          estilo: ["audaz", "moderno"]
+        }
+      },
+      {
+        id: "bolso-tote-camel",
+        nombre: "Bolso Tote Camel",
+        categoria: "bolsos",
+        precio: 89.00,
+        precioAnterior: null,
+        badge: "Más vendido",
+        descuento: null,
+        opiniones: 17,
+        imagen: IMAGES.p3,
+        capsuleColor: "menthe",
+        descripcion: "Cuir grainé camel d'une souplesse exceptionnelle, double anse renforcée, finitions dorées minimalistes et compartiment spacieux.",
+        tags: {
+          ocasion: ["dia", "regalo"],
+          familia: ["fresco"],
+          intensidad: ["media"],
+          presupuesto: ["mas80"],
+          estilo: ["clasico", "moderno"]
+        }
+      },
+      {
+        id: "bolso-burdeos",
+        nombre: "Bolso Burdeos con bandolera",
+        categoria: "bolsos",
+        precio: 119.00,
+        precioAnterior: null,
+        badge: null,
+        descuento: null,
+        opiniones: 21,
+        imagen: IMAGES.p4,
+        capsuleColor: "rose",
+        descripcion: "Teinte bordeaux profonde, fermoir aimanté dissimulé, bandoulière amovible en cuir ajustable pour un porté croisé ou épaule sophistiqué.",
+        tags: {
+          ocasion: ["noche", "regalo"],
+          familia: ["oriental"],
+          intensidad: ["intensa"],
+          presupuesto: ["mas80"],
+          estilo: ["audaz", "clasico"]
+        }
+      },
+      {
+        id: "fleur-blanche",
+        nombre: "Fleur Blanche – Eau de Parfum 50 ml",
+        categoria: "perfumes",
+        precio: 59.00,
+        precioAnterior: null,
+        badge: null,
+        descuento: null,
+        opiniones: 31,
+        imagen: IMAGES.p5,
+        capsuleColor: "rose",
+        descripcion: "Un bouquet floral aérien et lumineux composé de jasmin sambac, fleur d'oranger méditerranéenne et pétales de gardénia sur fond musqué.",
+        tags: {
+          ocasion: ["dia", "regalo"],
+          familia: ["floral", "fresco"],
+          intensidad: ["suave", "media"],
+          presupuesto: ["50a80"],
+          estilo: ["moderno", "clasico"]
+        }
+      },
+      {
+        id: "bolso-mini-noir",
+        nombre: "Bolso Mini Noir en cuir",
+        categoria: "bolsos",
+        precio: 95.00,
+        precioAnterior: null,
+        badge: "Novedad",
+        descuento: null,
+        opiniones: 19,
+        imagen: IMAGES.p6,
+        capsuleColor: "sable",
+        descripcion: "Lignes épurées sans aucun logo apparent. Cuir noir satiné italien de première qualité, bandoulière fine et mousquetons dorés polis.",
+        tags: {
+          ocasion: ["noche", "dia"],
+          familia: ["amaderado"],
+          intensidad: ["media"],
+          presupuesto: ["mas80"],
+          estilo: ["moderno", "audaz"]
+        }
+      }
+    ];
+
+    // Dictionnaires de traductions ES / FR / EN
+    const TRANSLATIONS = {
+      ES: {
+        nav_inicio: "Inicio",
+        nav_perfumes: "Perfumes",
+        nav_bolsos: "Bolsos",
+        nav_quiz: "Quiz",
+        nav_guias: "Guías",
+        hero_subtitle: "Perfumes y bolsos seleccionados con cuidado. Envío a toda Europa.",
+        hero_btn: "Encuentra tu perfume",
+        hero_btn_explore: "Ver colección",
+        hero_trust: "Envío express gratuito desde 60 € · Pago seguro por WhatsApp",
+        badge_novedad: "Novedad",
+        universes_title: "Dos universos",
+        universe_discover: "Descubrir",
+        quiz_kicker: "Asesor personal",
+        quiz_main_title: "Tu perfume en 5 preguntas.",
+        quiz_desc: "Ocasión, estilo y presupuesto. Recibe 3 recomendaciones por email.",
+        quiz_start_btn: "Empezar el quiz",
+        quiz_back: "Atrás",
+        quiz_instruction: "Haz clic para seleccionar",
+        quiz_results_title: "Tus recomendaciones exclusivas",
+        quiz_results_subtitle: "Seleccionadas cuidadosamente según tu perfil:",
+        quiz_receive_btn: "Recibir mis recomendaciones",
+        quiz_success_text: "¡Recomendaciones enviadas con éxito a tu bandeja de entrada!",
+        quiz_repeat_btn: "Repetir el quiz",
+        catalog_title: "Nuestra selección",
+        tab_todos: "Todos",
+        btn_add_to_cart: "Añadir al carrito",
+        reviews_title: "Opiniones de nuestros clientes",
+        guides_title: "Guías para elegir bien",
+        guide_1_title: "Cómo elegir tu perfume",
+        guide_2_title: "Ideas de regalo",
+        guide_3_title: "Cómo elegir tu bolso",
+        guide_read_btn: "Leer la guía",
+        tiktok_title: "Síguenos en TikTok",
+        tiktok_btn: "Seguir",
+        tiktok_clip_1: "Unboxing bolso artesanal",
+        tiktok_clip_2: "Esencia Noir Élégance",
+        tiktok_clip_3: "Puesta en escena regalo",
+        tiktok_clip_4: "Styling Bolso Burdeos",
+        footer_news_title: "Recibe nuestras novedades",
+        footer_news_desc: "Fragancias exclusivas, lanzamientos y acceso prioritario.",
+        footer_news_btn: "Suscribirme",
+        footer_news_thanks: "¡Gracias por suscribirte a Maison Hermance!",
+        footer_col_shop: "Tienda",
+        footer_col_help: "Ayuda",
+        footer_col_legal: "Legal",
+        footer_col_contact: "Contacto",
+        footer_link_gifts: "Cofres regalo",
+        footer_link_shipping: "Envíos y entregas",
+        footer_link_returns: "Devoluciones",
+        footer_link_faq: "Preguntas frecuentes",
+        footer_link_contact: "Contacto",
+        footer_link_legal: "Aviso legal",
+        footer_link_privacy: "Política de privacidad",
+        footer_link_cookies: "Política de cookies",
+        footer_link_terms: "Términos y condiciones",
+        footer_copyright: "© 2026 Maison Hermance. Todos los derechos reservados.",
+        float_quiz_text: "¿Qué perfume es para ti?",
+        float_quiz_btn: "Hacer el quiz",
+        cart_title: "Tu carrito",
+        cart_empty: "Tu carrito está vacío",
+        cart_shipping_label: "Envío a toda Europa",
+        cart_shipping_free: "Gratis",
+        cart_total_label: "Total",
+        cart_checkout_btn: "Finalizar por WhatsApp",
+        toast_added: "Añadido al carrito"
+      },
+      FR: {
+        nav_inicio: "Accueil",
+        nav_perfumes: "Parfums",
+        nav_bolsos: "Sacs à main",
+        nav_quiz: "Quiz",
+        nav_guias: "Guides",
+        hero_subtitle: "Parfums et sacs à main sélectionnés avec soin. Livraison dans toute l'Europe.",
+        hero_btn: "Trouvez votre parfum",
+        hero_btn_explore: "Explorer la collection",
+        hero_trust: "Livraison express offerte dès 60 € · Paiement sécurisé via WhatsApp",
+        badge_novedad: "Nouveauté",
+        universes_title: "Deux univers",
+        universe_discover: "Découvrir",
+        quiz_kicker: "Conseiller privé",
+        quiz_main_title: "Votre parfum en 5 questions.",
+        quiz_desc: "Occasion, style et budget. Recevez 3 recommandations par email.",
+        quiz_start_btn: "Démarrer le quiz",
+        quiz_back: "Retour",
+        quiz_instruction: "Cliquez pour sélectionner",
+        quiz_results_title: "Vos recommandations exclusives",
+        quiz_results_subtitle: "Sélectionnées sur mesure selon vos préférences :",
+        quiz_receive_btn: "Recevoir mes recommandations",
+        quiz_success_text: "Recommandations envoyées avec succès dans votre boîte mail !",
+        quiz_repeat_btn: "Recommencer le quiz",
+        catalog_title: "Notre sélection",
+        tab_todos: "Tous",
+        btn_add_to_cart: "Ajouter au panier",
+        reviews_title: "Avis de nos clients",
+        guides_title: "Guides pour bien choisir",
+        guide_1_title: "Comment choisir son parfum",
+        guide_2_title: "Idées de cadeaux",
+        guide_3_title: "Comment choisir son sac",
+        guide_read_btn: "Lire le guide",
+        tiktok_title: "Suivez-nous sur TikTok",
+        tiktok_btn: "Suivre",
+        tiktok_clip_1: "Unboxing sac artisanal",
+        tiktok_clip_2: "Essence Noir Élégance",
+        tiktok_clip_3: "Mise en scène cadeau",
+        tiktok_clip_4: "Styling Sac Bordeaux",
+        footer_news_title: "Recevez nos nouveautés",
+        footer_news_desc: "Fragrances exclusives, avant-premières et accès prioritaire.",
+        footer_news_btn: "S'inscrire",
+        footer_news_thanks: "Merci de vous être abonné à Maison Hermance !",
+        footer_col_shop: "Boutique",
+        footer_col_help: "Aide",
+        footer_col_legal: "Légal",
+        footer_col_contact: "Contact",
+        footer_link_gifts: "Coffrets cadeaux",
+        footer_link_shipping: "Livraisons et délais",
+        footer_link_returns: "Retours",
+        footer_link_faq: "Questions fréquentes",
+        footer_link_contact: "Contact",
+        footer_link_legal: "Mentions légales",
+        footer_link_privacy: "Politique de confidentialité",
+        footer_link_cookies: "Politique de cookies",
+        footer_link_terms: "Conditions générales",
+        footer_copyright: "© 2026 Maison Hermance. Tous droits réservés.",
+        float_quiz_text: "Quel parfum est fait pour vous ?",
+        float_quiz_btn: "Faire le quiz",
+        cart_title: "Votre panier",
+        cart_empty: "Votre panier est vide",
+        cart_shipping_label: "Livraison Europe",
+        cart_shipping_free: "Offerte",
+        cart_total_label: "Total",
+        cart_checkout_btn: "Commander sur WhatsApp",
+        toast_added: "Ajouté au panier"
+      },
+      EN: {
+        nav_inicio: "Home",
+        nav_perfumes: "Perfumes",
+        nav_bolsos: "Handbags",
+        nav_quiz: "Quiz",
+        nav_guias: "Guides",
+        hero_subtitle: "Carefully curated perfumes and handbags. Shipping across Europe.",
+        hero_btn: "Find your perfume",
+        hero_btn_explore: "Explore collection",
+        hero_trust: "Free express shipping over €60 · Secure order via WhatsApp",
+        badge_novedad: "New In",
+        universes_title: "Two worlds",
+        universe_discover: "Discover",
+        quiz_kicker: "Personal advisor",
+        quiz_main_title: "Your perfume in 5 questions.",
+        quiz_desc: "Occasion, style, and budget. Receive 3 personalized picks by email.",
+        quiz_start_btn: "Start the quiz",
+        quiz_back: "Back",
+        quiz_instruction: "Click to select",
+        quiz_results_title: "Your curated recommendations",
+        quiz_results_subtitle: "Specially selected according to your scent profile:",
+        quiz_receive_btn: "Receive recommendations",
+        quiz_success_text: "Recommendations sent successfully to your inbox!",
+        quiz_repeat_btn: "Retake the quiz",
+        catalog_title: "Our collection",
+        tab_todos: "All",
+        btn_add_to_cart: "Add to bag",
+        reviews_title: "Client reviews",
+        guides_title: "Guides for choosing well",
+        guide_1_title: "How to choose your perfume",
+        guide_2_title: "Gift inspiration",
+        guide_3_title: "How to choose your handbag",
+        guide_read_btn: "Read guide",
+        tiktok_title: "Follow us on TikTok",
+        tiktok_btn: "Follow",
+        tiktok_clip_1: "Artisan handbag unboxing",
+        tiktok_clip_2: "Noir Élégance essence",
+        tiktok_clip_3: "Gift packaging staging",
+        tiktok_clip_4: "Burgundy Bag styling",
+        footer_news_title: "Receive our newsletter",
+        footer_news_desc: "Exclusive scents, early releases, and priority access.",
+        footer_news_btn: "Subscribe",
+        footer_news_thanks: "Thank you for subscribing to Maison Hermance!",
+        footer_col_shop: "Shop",
+        footer_col_help: "Help",
+        footer_col_legal: "Legal",
+        footer_col_contact: "Contact",
+        footer_link_gifts: "Gift sets",
+        footer_link_shipping: "Shipping & delivery",
+        footer_link_returns: "Returns",
+        footer_link_faq: "FAQ",
+        footer_link_contact: "Contact",
+        footer_link_legal: "Legal notice",
+        footer_link_privacy: "Privacy policy",
+        footer_link_cookies: "Cookie policy",
+        footer_link_terms: "Terms & conditions",
+        footer_copyright: "© 2026 Maison Hermance. All rights reserved.",
+        float_quiz_text: "Which perfume defines you?",
+        float_quiz_btn: "Take quiz",
+        cart_title: "Your shopping bag",
+        cart_empty: "Your shopping bag is empty",
+        cart_shipping_label: "Shipping across Europe",
+        cart_shipping_free: "Free",
+        cart_total_label: "Total",
+        cart_checkout_btn: "Checkout on WhatsApp",
+        toast_added: "Added to shopping bag"
+      }
+    };
+
+    // État actif
+    let currentLang = "ES";
+    let activeCategory = "todos";
+    let cart = []; // En mémoire de la page
+
+    /* ========================================================
+       GESTION DES IMAGES AVEC FALLBACK PASTEL ÉLÉGANT
+       ======================================================== */
+    function imgFallback(imgElem, pastelType = "sable") {
+      imgElem.onerror = null;
+      const parent = imgElem.parentElement;
+      if (parent) {
+        let bgHex = "#F3E4B8";
+        if (pastelType === "lilas") bgHex = "#E4D3F2";
+        if (pastelType === "rose") bgHex = "#F6CFC9";
+        if (pastelType === "menthe") bgHex = "#CFE6D9";
+
+        parent.style.backgroundColor = bgHex;
+        imgElem.style.display = "none";
+        
+        // Insère un emblème luxueux SVG
+        const fallbackSvg = document.createElement("div");
+        fallbackSvg.style.display = "flex";
+        fallbackSvg.style.flexDirection = "column";
+        fallbackSvg.style.alignItems = "center";
+        fallbackSvg.style.justifyContent = "center";
+        fallbackSvg.style.width = "100%";
+        fallbackSvg.style.height = "100%";
+        fallbackSvg.style.color = "#111111";
+        fallbackSvg.innerHTML = `
+          <div style="width:48px;height:48px;border-radius:50%;background:#111111;color:#B8924A;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);">MH</div>
+          <span style="font-size:0.75rem;font-weight:700;margin-top:8px;letter-spacing:0.04em;">Maison Hermance</span>
+        `;
+        parent.appendChild(fallbackSvg);
+      }
+    }
+
+    /* ========================================================
+       RENDER DES PRODUITS DANS LA GRILLE
+       ======================================================== */
+    function renderProducts(category = "todos") {
+      const grid = document.getElementById("productsGrid");
+      if (!grid) return;
+
+      const filtered = category === "todos" 
+        ? PRODUCTS 
+        : PRODUCTS.filter(p => p.categoria === category);
+
+      grid.innerHTML = filtered.map(product => {
+        const hasDiscount = product.precioAnterior !== null;
+        const discountLabel = product.descuento ? `<span class="card-badge badge-discount">${product.descuento}</span>` : "";
+        const noveltyBadge = product.badge ? `<span class="card-badge badge-black">${product.badge}</span>` : "";
+        const oldPriceHtml = hasDiscount 
+          ? `<span class="price-old">${product.precioAnterior.toFixed(2).replace('.', ',')} €</span>` 
+          : "";
+
+        return `
+          <article class="product-card" onclick="openProductQuickView('${product.id}')" tabindex="0" aria-label="${product.nombre}">
+            <div class="capsule-box capsule-${product.capsuleColor}">
+              <div class="product-badge-wrap">
+                ${noveltyBadge}
+                ${discountLabel}
+              </div>
+              <img class="capsule-img" 
+                   src="${product.imagen}" 
+                   alt="${product.nombre}" 
+                   loading="lazy" 
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this, '${product.capsuleColor}')" />
+              
+              <button class="btn-pill btn-primary btn-sm quick-add-overlay-btn" 
+                      onclick="event.stopPropagation(); addToCart('${product.id}')" 
+                      aria-label="Añadir ${product.nombre} al carrito">
+                ${TRANSLATIONS[currentLang].btn_add_to_cart}
+              </button>
+            </div>
+
+            <div class="product-details">
+              <div class="product-rating">
+                <div class="stars-group" aria-hidden="true">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span>${product.opiniones} opiniones</span>
+              </div>
+
+              <h3 class="product-name">${product.nombre}</h3>
+
+              <div class="product-price-row">
+                <span class="price-current">${product.precio.toFixed(2).replace('.', ',')} €</span>
+                ${oldPriceHtml}
+              </div>
+
+              <button class="btn-pill btn-primary btn-sm product-mobile-add-btn" 
+                      onclick="event.stopPropagation(); addToCart('${product.id}')">
+                ${TRANSLATIONS[currentLang].btn_add_to_cart}
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    /* ========================================================
+       FILTRES DU CATALOGUE ET SLIDER DE SOULIGNEMENT
+       ======================================================== */
+    function updateSliderPosition(tabElem) {
+      const slider = document.getElementById("filterSlider");
+      if (!slider || !tabElem) return;
+      slider.style.left = `${tabElem.offsetLeft}px`;
+      slider.style.width = `${tabElem.offsetWidth}px`;
+    }
+
+    function setCatalogFilter(cat, btnElem) {
+      activeCategory = cat;
+      document.querySelectorAll(".filter-tab").forEach(tab => tab.classList.remove("active"));
+      if (btnElem) {
+        btnElem.classList.add("active");
+        updateSliderPosition(btnElem);
+      }
+      renderProducts(cat);
+    }
+
+    function filterCatalog(category) {
+      const targetTab = category === "perfumes" 
+        ? document.getElementById("tabPerfumes") 
+        : document.getElementById("tabBolsos");
+      
+      const elem = document.getElementById("seleccion");
+      if (elem) {
+        elem.scrollIntoView({ behavior: 'smooth' });
+      }
+      setCatalogFilter(category, targetTab);
+    }
+
+    /* ========================================================
+       GESTION DU PANIER (EN MÉMOIRE SANS LOCALSTORAGE)
+       ======================================================== */
+    function addToCart(productId, quantity = 1) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      const existing = cart.find(item => item.product.id === productId);
+      if (existing) {
+        existing.quantity += quantity;
+      } else {
+        cart.push({ product, quantity });
+      }
+
+      updateCartUI();
+      showToastNotification();
+      bumpCartBadge();
+    }
+
+    function updateCartItemQty(productId, delta) {
+      const item = cart.find(i => i.product.id === productId);
+      if (!item) return;
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.product.id !== productId);
+      }
+      updateCartUI();
+    }
+
+    function removeCartItem(productId) {
+      cart = cart.filter(i => i.product.id !== productId);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.product.precio * item.quantity), 0);
+
+      // Compteurs
+      const headerCount = document.getElementById("headerCartCount");
+      const drawerCount = document.getElementById("drawerCartTotalCount");
+      const drawerTotal = document.getElementById("cartDrawerTotalPrice");
+      if (headerCount) headerCount.textContent = totalCount;
+      if (drawerCount) drawerCount.textContent = totalCount;
+      if (drawerTotal) drawerTotal.textContent = `${totalPrice.toFixed(2).replace('.', ',')} €`;
+
+      // Liste des items dans le tiroir
+      const container = document.getElementById("cartItemsContainer");
+      if (!container) return;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="cart-empty-state">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 16px;">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+              <path d="M3 6h18"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <p class="cart-empty-title">${TRANSLATIONS[currentLang].cart_empty}</p>
+            <button class="btn-pill btn-secondary btn-sm" style="margin-top:16px;" onclick="closeCart(); document.getElementById('seleccion').scrollIntoView({behavior:'smooth'});">
+              Descubrir productos
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = cart.map(item => `
+        <div class="cart-item-row">
+          <img class="cart-item-thumb" 
+               src="${item.product.imagen}" 
+               alt="${item.product.nombre}" 
+               referrerpolicy="no-referrer"
+               onerror="imgFallback(this, '${item.product.capsuleColor}')" />
+          <div class="cart-item-info">
+            <h4 class="cart-item-name">${item.product.nombre}</h4>
+            <div class="cart-item-price">${item.product.precio.toFixed(2).replace('.', ',')} €</div>
+            <div class="cart-item-qty-row">
+              <div class="qty-stepper">
+                <button class="qty-btn" onclick="updateCartItemQty('${item.product.id}', -1)" aria-label="Reducir cantidad">-</button>
+                <span class="qty-val">${item.quantity}</span>
+                <button class="qty-btn" onclick="updateCartItemQty('${item.product.id}', 1)" aria-label="Aumentar cantidad">+</button>
+              </div>
+              <button class="cart-item-remove-btn" onclick="removeCartItem('${item.product.id}')">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function bumpCartBadge() {
+      const badge = document.getElementById("headerCartCount");
+      if (badge) {
+        badge.classList.add("bump");
+        setTimeout(() => badge.classList.remove("bump"), 300);
+      }
+    }
+
+    function showToastNotification() {
+      const toast = document.getElementById("toastNotification");
+      if (!toast) return;
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2000);
+    }
+
+    function openCart() {
+      document.getElementById("cartOverlay")?.classList.add("open");
+      document.getElementById("cartDrawer")?.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeCart() {
+      document.getElementById("cartOverlay")?.classList.remove("open");
+      document.getElementById("cartDrawer")?.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    /* COMMANDE VIA WHATSAPP */
+    function checkoutViaWhatsApp() {
+      if (cart.length === 0) {
+        alert(TRANSLATIONS[currentLang].cart_empty);
+        return;
+      }
+
+      const total = cart.reduce((sum, item) => sum + (item.product.precio * item.quantity), 0);
+      let itemsText = cart.map(item => `• ${item.quantity}x ${item.product.nombre} (${(item.product.precio * item.quantity).toFixed(2)} €)`).join("\n");
+
+      let message = `Hola Maison Hermance,\n\nDeseo realizar un pedido a través de su boutique:\n\n${itemsText}\n\nTotal del pedido: ${total.toFixed(2)} € (Envío gratuito a Europa)\n\nPor favor, confirmen disponibilidad y detalles de entrega. ¡Gracias!`;
+      
+      const encodedMsg = encodeURIComponent(message);
+      const url = `https://wa.me/34641016013?text=${encodedMsg}`;
+      window.open(url, "_blank");
+    }
+
+    /* ========================================================
+       QUIZ EN 5 QUESTIONS INTERACTIF
+       ======================================================== */
+    const QUIZ_QUESTIONS = [
+      {
+        id: "ocasion",
+        pregunta: {
+          ES: "¿Para qué ocasión buscas tu fragancia?",
+          FR: "Pour quelle occasion recherchez-vous votre fragrance ?",
+          EN: "For what occasion are you looking for your fragrance?"
+        },
+        opciones: [
+          { valor: "dia", label: { ES: "Día a día", FR: "Tous les jours", EN: "Daily wear" } },
+          { valor: "noche", label: { ES: "Noche", FR: "En soirée", EN: "Evening & Night" } },
+          { valor: "regalo", label: { ES: "Regalo", FR: "Un cadeau d'exception", EN: "Special gift" } }
+        ]
+      },
+      {
+        id: "familia",
+        pregunta: {
+          ES: "¿Cuál es tu familia olfativa predilecta?",
+          FR: "Quelle est votre famille olfactive de prédilection ?",
+          EN: "What is your preferred fragrance family?"
+        },
+        opciones: [
+          { valor: "floral", label: { ES: "Floral", FR: "Florale", EN: "Floral" } },
+          { valor: "amaderado", label: { ES: "Amaderado", FR: "Boisée", EN: "Woody" } },
+          { valor: "oriental", label: { ES: "Oriental", FR: "Orientale & Ambrée", EN: "Oriental & Amber" } },
+          { valor: "fresco", label: { ES: "Fresco", FR: "Fraîche & Hespéridée", EN: "Fresh & Citrus" } }
+        ]
+      },
+      {
+        id: "intensidad",
+        pregunta: {
+          ES: "¿Qué intensidad de estela prefieres?",
+          FR: "Quelle intensité de sillage préférez-vous ?",
+          EN: "What sillage intensity do you prefer?"
+        },
+        opciones: [
+          { valor: "suave", label: { ES: "Suave", FR: "Subtile et discrète", EN: "Soft & Subtle" } },
+          { valor: "media", label: { ES: "Media", FR: "Équilibrée et présente", EN: "Medium & Balanced" } },
+          { valor: "intensa", label: { ES: "Intensa", FR: "Intense et magnétique", EN: "Intense & Long-lasting" } }
+        ]
+      },
+      {
+        id: "presupuesto",
+        pregunta: {
+          ES: "¿Cuál es tu rango de presupuesto?",
+          FR: "Quel est votre budget idéal ?",
+          EN: "What is your budget range?"
+        },
+        opciones: [
+          { valor: "menos50", label: { ES: "Menos de 50 €", FR: "Moins de 50 €", EN: "Under €50" } },
+          { valor: "50a80", label: { ES: "50 a 80 €", FR: "De 50 à 80 €", EN: "€50 to €80" } },
+          { valor: "mas80", label: { ES: "Más de 80 €", FR: "Plus de 80 €", EN: "Over €80" } }
+        ]
+      },
+      {
+        id: "estilo",
+        pregunta: {
+          ES: "¿Cómo defines tu estilo personal?",
+          FR: "Comment définissez-vous votre style personnel ?",
+          EN: "How would you describe your personal style?"
+        },
+        opciones: [
+          { valor: "clasico", label: { ES: "Clásico", FR: "Classique et intemporel", EN: "Classic & Timeless" } },
+          { valor: "moderno", label: { ES: "Moderno", FR: "Moderne et raffiné", EN: "Modern & Minimal" } },
+          { valor: "audaz", label: { ES: "Audaz", FR: "Audacieux et affirmé", EN: "Bold & Magnetic" } }
+        ]
+      }
+    ];
+
+    let quizCurrentStep = 0;
+    let quizAnswers = {};
+
+    function renderQuizStep() {
+      const stepInd = document.getElementById("quizStepIndicator");
+      const progFill = document.getElementById("quizProgressFill");
+      const qTitle = document.getElementById("quizQuestionText");
+      const optList = document.getElementById("quizOptionsList");
+      const backBtn = document.getElementById("quizBackBtn");
+
+      if (quizCurrentStep >= QUIZ_QUESTIONS.length) {
+        showQuizResults();
+        return;
+      }
+
+      const q = QUIZ_QUESTIONS[quizCurrentStep];
+      const stepNum = quizCurrentStep + 1;
+      
+      if (stepInd) stepInd.textContent = `Pregunta ${stepNum} / ${QUIZ_QUESTIONS.length}`;
+      if (progFill) progFill.style.width = `${(stepNum / QUIZ_QUESTIONS.length) * 100}%`;
+      if (qTitle) qTitle.textContent = q.pregunta[currentLang] || q.pregunta.ES;
+
+      if (backBtn) {
+        backBtn.style.visibility = quizCurrentStep > 0 ? "visible" : "hidden";
+      }
+
+      if (optList) {
+        optList.innerHTML = q.opciones.map(opt => {
+          const isSelected = quizAnswers[q.id] === opt.valor;
+          return `
+            <button class="quiz-opt-btn ${isSelected ? 'selected' : ''}" 
+                    onclick="selectQuizOption('${q.id}', '${opt.valor}')">
+              <span>${opt.label[currentLang] || opt.label.ES}</span>
+              <span class="quiz-opt-circle"></span>
+            </button>
+          `;
+        }).join('');
+      }
+    }
+
+    function selectQuizOption(questionId, val) {
+      quizAnswers[questionId] = val;
+      renderQuizStep();
+      setTimeout(() => {
+        quizCurrentStep++;
+        renderQuizStep();
+      }, 220);
+    }
+
+    function quizGoBack() {
+      if (quizCurrentStep > 0) {
+        quizCurrentStep--;
+        renderQuizStep();
+      }
+    }
+
+    function calculateRecommendations() {
+      // Calcule un score de pertinence pour chaque produit selon les réponses
+      const scores = PRODUCTS.map(p => {
+        let score = 0;
+        if (p.categoria === "perfumes") score += 2; // Favorise les parfums pour le quiz parfum
+
+        if (quizAnswers.ocasion && p.tags.ocasion.includes(quizAnswers.ocasion)) score += 3;
+        if (quizAnswers.familia && p.tags.familia.includes(quizAnswers.familia)) score += 4;
+        if (quizAnswers.intensidad && p.tags.intensidad.includes(quizAnswers.intensidad)) score += 3;
+        if (quizAnswers.presupuesto && p.tags.presupuesto.includes(quizAnswers.presupuesto)) score += 3;
+        if (quizAnswers.estilo && p.tags.estilo.includes(quizAnswers.estilo)) score += 2;
+
+        return { product: p, score };
+      });
+
+      scores.sort((a, b) => b.score - a.score);
+      return scores.slice(0, 3).map(s => s.product);
+    }
+
+    function showQuizResults() {
+      document.getElementById("quizStepView").style.display = "none";
+      const resultsView = document.getElementById("quizResultsView");
+      resultsView.classList.add("active");
+
+      const list = document.getElementById("quizRecommendationsList");
+      const recommended = calculateRecommendations();
+
+      if (list) {
+        list.innerHTML = recommended.map(p => `
+          <div class="quiz-recom-item">
+            <img class="quiz-recom-img" 
+                 src="${p.imagen}" 
+                 alt="${p.nombre}" 
+                 referrerpolicy="no-referrer"
+                 onerror="imgFallback(this, '${p.capsuleColor}')" />
+            <div class="quiz-recom-info">
+              <div class="quiz-recom-name">${p.nombre}</div>
+              <div class="quiz-recom-price">${p.precio.toFixed(2).replace('.', ',')} €</div>
+            </div>
+            <button class="btn-pill btn-white btn-sm" onclick="addToCart('${p.id}')">
+              ${TRANSLATIONS[currentLang].btn_add_to_cart}
+            </button>
+          </div>
+        `).join('');
+      }
+    }
+
+    function handleQuizEmailSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById("quizEmailInput");
+      const msg = document.getElementById("quizSuccessMsg");
+      if (input && input.value.includes("@")) {
+        msg.style.display = "block";
+        input.value = "";
+      }
+    }
+
+    function restartQuiz() {
+      quizCurrentStep = 0;
+      quizAnswers = {};
+      document.getElementById("quizResultsView").classList.remove("active");
+      document.getElementById("quizStepView").style.display = "block";
+      document.getElementById("quizSuccessMsg").style.display = "none";
+      renderQuizStep();
+    }
+
+    /* ========================================================
+       MODAL FICHE RAPIDE (QUICK VIEW)
+       ======================================================== */
+    let currentModalProduct = null;
+    let modalQuantity = 1;
+
+    function openProductQuickView(productId) {
+      const p = PRODUCTS.find(item => item.id === productId);
+      if (!p) return;
+
+      currentModalProduct = p;
+      modalQuantity = 1;
+
+      document.getElementById("modalProductCat").textContent = p.categoria === "perfumes" ? "Perfumes" : "Bolsos";
+      document.getElementById("modalProductTitle").textContent = p.nombre;
+      document.getElementById("modalProductReviews").textContent = `${p.opiniones} opiniones`;
+      document.getElementById("modalProductPrice").textContent = `${p.precio.toFixed(2).replace('.', ',')} €`;
+      document.getElementById("modalProductDesc").textContent = p.descripcion;
+      document.getElementById("modalQtyVal").textContent = "1";
+
+      const img = document.getElementById("modalProductImg");
+      img.src = p.imagen;
+      img.alt = p.nombre;
+      img.onerror = () => imgFallback(img, p.capsuleColor);
+
+      const capBox = document.getElementById("modalCapsuleBg");
+      capBox.className = `modal-capsule-visual capsule-${p.capsuleColor}`;
+
+      const addBtn = document.getElementById("modalAddToCartBtn");
+      addBtn.onclick = () => {
+        addToCart(p.id, modalQuantity);
+        closeQuickViewModal();
+      };
+
+      document.getElementById("quickViewOverlay").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeQuickViewModal() {
+      document.getElementById("quickViewOverlay").classList.remove("open");
+      document.body.style.overflow = "";
+      currentModalProduct = null;
+    }
+
+    function adjustModalQty(delta) {
+      modalQuantity = Math.max(1, modalQuantity + delta);
+      document.getElementById("modalQtyVal").textContent = modalQuantity;
+    }
+
+    function handleModalOverlayClick(e) {
+      if (e.target.id === "quickViewOverlay") {
+        closeQuickViewModal();
+      }
+    }
+
+    /* ========================================================
+       MODAL GUIDES & AIDE
+       ======================================================== */
+    const GUIDE_TEXTS = {
+      1: {
+        title: { ES: "Cómo elegir tu perfume", FR: "Comment choisir son parfum", EN: "How to choose your perfume" },
+        body: {
+          ES: "Para elegir el perfume ideal, ten en cuenta la evolución olfativa: notas de salida (los primeros 15 minutos), corazón (el carácter principal durante horas) y fondo (la fijación en la piel). Prueba siempre la fragancia en tu propia piel y déjala reposar.",
+          FR: "Pour trouver votre signature olfactive, observez l'évolution des notes de tête, de cœur et de fond. Vaporisez sur les points de pulsation (poignets, nuque) et laissez reposer sans frotter.",
+          EN: "To choose your signature scent, consider its olfactory evolution: top notes, heart notes, and base notes. Spray on pulse points and let it develop naturally on your skin."
+        }
+      },
+      2: {
+        title: { ES: "Ideas de regalo", FR: "Idées de cadeaux", EN: "Gift inspiration" },
+        body: {
+          ES: "Nuestros cofres Maison Hermance combinan fragancias emblemáticas y accesorios de marroquinería en un empaque sellado en oro. Una elección elegante y atemporal que nunca falla.",
+          FR: "Nos coffrets cadeaux Maison Hermance marient parfums précieux et maroquinerie d'exception. Chaque pièce est préparée dans un écrin minimaliste noir et or.",
+          EN: "Maison Hermance gift collections pair iconic fragrances with refined leather accessories, packaged in minimalist luxury boxes with gold detailing."
+        }
+      },
+      3: {
+        title: { ES: "Cómo elegir tu bolso", FR: "Comment choisir son sac", EN: "How to choose your handbag" },
+        body: {
+          ES: "Elige según tu ritmo de vida: un Tote espacioso en color camel para el día a día y trabajo, o un bolso bandolera estructurado en burdeos o negro para la noche y eventos selectos.",
+          FR: "Adaptez la taille et la matière à vos journées : un cabas Tote souple pour le quotidien et les déplacements, ou une bandoulière structurée pour rehausser une silhouette du soir.",
+          EN: "Select according to your lifestyle: a spacious camel leather tote for daytime versatility, or a structured crossbody bag in burgundy or black for refined evenings."
+        }
+      }
+    };
+
+    function openGuideModal(id) {
+      const g = GUIDE_TEXTS[id];
+      if (!g) return;
+      document.getElementById("guideModalTitle").textContent = g.title[currentLang] || g.title.ES;
+      document.getElementById("guideModalBody").textContent = g.body[currentLang] || g.body.ES;
+      document.getElementById("guideOverlay").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function openHelpModal(type) {
+      const titles = {
+        shipping: "Envíos y entregas en Europa",
+        returns: "Devoluciones garantizadas",
+        faq: "Preguntas frecuentes",
+        legal: "Aviso legal",
+        privacy: "Política de privacidad",
+        cookies: "Política de cookies",
+        terms: "Términos y condiciones"
+      };
+      const texts = {
+        shipping: "Envíos gratuitos a toda Europa en pedidos a partir de 60 €. Entrega estimada en España en 24/48 horas laborables.",
+        returns: "Dispones de 14 días para devolver o cambiar tu producto sin coste adicional, siempre que el producto esté sin usar.",
+        faq: "¿Cómo se gestiona el pedido? Nuestro equipo confirma los detalles personalmente a través de WhatsApp para brindarte atención directa y exclusiva.",
+        legal: "Maison Hermance S.L. &middot; Domicilio en Madrid, España. Inscrita en el Registro Mercantil. Marca europea protegida.",
+        privacy: "Tus datos personales se tratan con absoluta confidencialidad con el único fin de procesar tus consultas y pedidos.",
+        cookies: "Utilizamos cookies técnicas necesarias para el funcionamiento del sitio y para recordar tus preferencias de idioma.",
+        terms: "Todas las compras están sujetas a la legislación europea de comercio electrónico y garantía legal de conformidad."
+      };
+
+      document.getElementById("guideModalTitle").textContent = titles[type] || "Información";
+      document.getElementById("guideModalBody").textContent = texts[type] || "";
+      document.getElementById("guideOverlay").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeGuideModal() {
+      document.getElementById("guideOverlay").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function handleGuideOverlayClick(e) {
+      if (e.target.id === "guideOverlay") closeGuideModal();
+    }
+
+    /* ========================================================
+       CARROUSEL DES AVIS CLIENTS
+       ======================================================== */
+    let reviewCurrentIndex = 0;
+    const totalReviewSlides = 3;
+    let reviewAutoInterval = null;
+
+    function setReviewSlide(index) {
+      reviewCurrentIndex = (index + totalReviewSlides) % totalReviewSlides;
+      const track = document.getElementById("reviewsTrack");
+      if (track) {
+        track.style.transform = `translateX(-${reviewCurrentIndex * 100}%)`;
+      }
+      document.querySelectorAll(".carousel-dot").forEach((dot, idx) => {
+        dot.classList.toggle("active", idx === reviewCurrentIndex);
+      });
+    }
+
+    function startReviewAutoplay() {
+      stopReviewAutoplay();
+      reviewAutoInterval = setInterval(() => {
+        setReviewSlide(reviewCurrentIndex + 1);
+      }, 5500);
+    }
+
+    function stopReviewAutoplay() {
+      if (reviewAutoInterval) clearInterval(reviewAutoInterval);
+    }
+
+    /* GESTION DU SWIPE TACTILE SUR MOBILE POUR LE CARROUSEL */
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const carouselBox = document.getElementById("reviewsCarouselWrapper");
+    if (carouselBox) {
+      carouselBox.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopReviewAutoplay();
+      }, { passive: true });
+
+      carouselBox.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) {
+          setReviewSlide(reviewCurrentIndex + 1);
+        } else if (touchEndX - touchStartX > 50) {
+          setReviewSlide(reviewCurrentIndex - 1);
+        }
+        startReviewAutoplay();
+      }, { passive: true });
+
+      carouselBox.addEventListener('mouseenter', stopReviewAutoplay);
+      carouselBox.addEventListener('mouseleave', startReviewAutoplay);
+    }
+
+    /* ========================================================
+       SÉLECTEUR DE LANGUE (ES / FR / EN) DYNAMIQUE
+       ======================================================== */
+    function setLanguage(lang) {
+      if (!TRANSLATIONS[lang]) return;
+      currentLang = lang;
+
+      // Update active state in all lang switchers
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+
+      // Update all DOM elements with data-i18n
+      document.querySelectorAll("[data-i18n]").forEach(elem => {
+        const key = elem.getAttribute("data-i18n");
+        if (TRANSLATIONS[lang][key]) {
+          elem.textContent = TRANSLATIONS[lang][key];
+        }
+      });
+
+      // Re-render components
+      renderProducts(activeCategory);
+      renderQuizStep();
+      updateCartUI();
+    }
+
+    /* ========================================================
+       NEWSLETTER FORM
+       ======================================================== */
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById("newsletterInput");
+      const fb = document.getElementById("newsletterFeedback");
+      if (input && input.value.includes("@")) {
+        fb.style.display = "block";
+        input.value = "";
+      }
+    }
+
+    /* ========================================================
+       BARRE QUIZ FLOTTANTE (5S DISPLAY + PERSISTENCE SESSION)
+       ======================================================== */
+    let quizBarDismissed = false;
+
+    function initFloatingQuizBar() {
+      setTimeout(() => {
+        if (!quizBarDismissed) {
+          const bar = document.getElementById("floatingQuizBar");
+          if (bar) bar.classList.add("visible");
+        }
+      }, 5000);
+    }
+
+    /* ========================================================
+       ÉVÉNEMENTS DOM & SCROLL OBSERVER
+       ======================================================== */
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Initialiser le catalogue
+      renderProducts("todos");
+      const defaultTab = document.querySelector(".filter-tab.active");
+      if (defaultTab) updateSliderPosition(defaultTab);
+
+      // 2. Initialiser le Quiz
+      renderQuizStep();
+      document.getElementById("quizBackBtn")?.addEventListener("click", quizGoBack);
+      document.getElementById("startQuizScrollBtn")?.addEventListener("click", () => {
+        document.getElementById("quiz")?.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // 3. Initialiser le Carrousel Avis
+      document.getElementById("reviewPrevBtn")?.addEventListener("click", () => setReviewSlide(reviewCurrentIndex - 1));
+      document.getElementById("reviewNextBtn")?.addEventListener("click", () => setReviewSlide(reviewCurrentIndex + 1));
+      document.querySelectorAll(".carousel-dot").forEach(dot => {
+        dot.addEventListener("click", (e) => setReviewSlide(parseInt(e.target.dataset.index, 10)));
+      });
+      startReviewAutoplay();
+
+      // 4. Floating Quiz Bar
+      initFloatingQuizBar();
+      document.getElementById("closeFloatingQuizBtn")?.addEventListener("click", () => {
+        quizBarDismissed = true;
+        document.getElementById("floatingQuizBar")?.classList.remove("visible");
+      });
+      document.getElementById("floatingQuizActionBtn")?.addEventListener("click", () => {
+        quizBarDismissed = true;
+        document.getElementById("floatingQuizBar")?.classList.remove("visible");
+      });
+
+      // 5. Bouton Panier
+      document.getElementById("openCartBtn")?.addEventListener("click", openCart);
+      document.getElementById("closeCartBtn")?.addEventListener("click", closeCart);
+      document.getElementById("cartOverlay")?.addEventListener("click", closeCart);
+
+      // 6. Mobile Menu
+      const mobileOverlay = document.getElementById("mobileMenuOverlay");
+      const mobileDrawer = document.getElementById("mobileMenu");
+      const openMobile = () => {
+        mobileOverlay.classList.add("open");
+        mobileDrawer.classList.add("open");
+        document.body.style.overflow = "hidden";
+      };
+      const closeMobile = () => {
+        mobileOverlay.classList.remove("open");
+        mobileDrawer.classList.remove("open");
+        document.body.style.overflow = "";
+      };
+      document.getElementById("openMobileMenuBtn")?.addEventListener("click", openMobile);
+      document.getElementById("closeMobileMenuBtn")?.addEventListener("click", closeMobile);
+      mobileOverlay?.addEventListener("click", closeMobile);
+      document.querySelectorAll(".mobile-nav-item").forEach(link => {
+        link.addEventListener("click", closeMobile);
+      });
+
+      // 7. Lang switcher buttons
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+      });
+
+      // 8. Scroll listener: Header shadow, Back to top, Active Nav
+      const header = document.getElementById("mainHeader");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+
+        // Ombre header après 80px
+        if (scrollY > 80) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+
+        // Bouton retour en haut après 600px
+        if (scrollY > 600) {
+          scrollTopBtn.classList.add("visible");
+        } else {
+          scrollTopBtn.classList.remove("visible");
+        }
+
+        // Active Nav highlight
+        const sections = [
+          { id: "inicio", link: document.querySelector('.nav-link[href="#inicio"]') },
+          { id: "perfumes", link: document.querySelector('.nav-link[href="#perfumes"]') },
+          { id: "bolsos", link: document.querySelector('.nav-link[href="#bolsos"]') },
+          { id: "quiz", link: document.querySelector('.nav-link[href="#quiz"]') }
+        ];
+
+        let currentSection = "inicio";
+        sections.forEach(sec => {
+          const el = document.getElementById(sec.id);
+          if (el) {
+            const top = el.offsetTop - 120;
+            if (scrollY >= top) currentSection = sec.id;
+          }
+        });
+
+        sections.forEach(sec => {
+          if (sec.link) {
+            sec.link.classList.toggle("active", sec.id === currentSection);
+          }
+        });
+      }, { passive: true });
+
+      scrollTopBtn?.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 9. Touche Échap pour fermer les modales et le panier
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeQuickViewModal();
+          closeGuideModal();
+          closeCart();
+          closeMobile();
+        }
+      });
+
+      // 10. IntersectionObserver pour animation en fondu et cascade
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".fade-cascade").forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

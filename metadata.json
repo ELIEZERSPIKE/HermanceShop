@@ -1,0 +1,6 @@
+{
+  "name": "Maison Hermance",
+  "description": "Boutique de perfumes y bolsos de lujo. Elegancia y Fragancias.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
