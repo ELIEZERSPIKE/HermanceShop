@@ -5,6 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: '/HermanceShop/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
@@ -19,4 +20,4 @@ export default defineConfig(() => {
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
   };
-});
+}); 
